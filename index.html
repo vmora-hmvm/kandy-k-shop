@@ -3,306 +3,744 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kandy K Shop — Chamoy Candy Made with Love</title>
-<meta name="description" content="Kandy K Shop — Premium chamoy candy, party trays, and specialty treats. Made fresh with love.">
+<title>Kandy K Shop | Premium Chamoy Candy — Los Angeles</title>
+<meta name="description" content="Kandy K Shop — premium chamoy candy, party trays & specialty treats. Bold flavors, bold colors. From LA, with love. @kandykshop">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kandy K Shop | Premium Chamoy Candy">
+<meta property="og:description" content="Bold flavors, bold colors. Premium chamoy candy from LA. @kandykshop">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --black:#0a0a0a;--black-soft:#141414;--black-card:#1a1a1a;
-  --pink:#E91E63;--pink-light:#F06292;--pink-dark:#C2185B;
-  --gold:#D4AF37;--gold-light:#E0B84C;--gold-dark:#B8941F;
-  --white:#fff;--gray:#888;--gray-light:#aaa;
-  --radius:12px;--shadow:0 8px 32px rgba(0,0,0,.5);
+  --black:#0a0a0a;
+  --black-2:#121212;
+  --black-3:#1a1a1a;
+  --pink:#FF1744;
+  --pink-bright:#FF4081;
+  --pink-soft:rgba(255,64,129,.15);
+  --gold:#FFD700;
+  --gold-bright:#FFE54F;
+  --gold-soft:rgba(255,215,0,.15);
+  --cream:#FAFAFA;
+  --muted:#8A8A8A;
+  --muted-dark:#3A3A3A;
+  --glass:rgba(255,255,255,.03);
+  --glass-border:rgba(255,255,255,.06);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{background:var(--black);color:var(--white);font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1.6;}
-.sparkle-bg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
-.sparkle{position:absolute;width:3px;height:3px;background:var(--gold);border-radius:50%;opacity:0;animation:sparkle-fade 4s infinite ease-in-out;}
-@keyframes sparkle-fade{0%,100%{opacity:0;transform:scale(0);}50%{opacity:.6;transform:scale(1);}}
-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,10,10,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,.15);padding:12px 0;}
-.nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;}
-.nav-logo{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);box-shadow:0 0 12px rgba(212,175,55,.3);transition:transform .3s;}
-.nav-logo:hover{transform:scale(1.1) rotate(5deg);}
-.nav-links{display:flex;gap:32px;list-style:none;}
-.nav-links a{color:var(--white);text-decoration:none;font-size:14px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;transition:color .3s;position:relative;}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--pink),var(--gold));transition:width .3s;}
-.nav-links a:hover{color:var(--pink-light);}
+body{font-family:'Outfit',sans-serif;background:var(--black);color:var(--cream);line-height:1.8;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% 0%,rgba(255,64,129,.06),transparent 50%);}
+h1,h2,h3,h4{font-family:'Bebas Neue',sans-serif;font-weight:400;line-height:1.1;letter-spacing:2px;text-transform:uppercase;}
+.gold{color:var(--gold);}
+.pink{color:var(--pink-bright);}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px;}
+section{padding:100px 0;position:relative;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+
+/* ===== NAV ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .4s;padding:16px 0;}
+.nav.scrolled{background:rgba(10,10,10,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border);padding:12px 0;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 24px;}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo-circle{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--gold));display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue';font-size:1.3rem;color:var(--black);font-weight:700;border:2px solid var(--gold);box-shadow:0 0 16px rgba(255,215,0,.2);flex-shrink:0;}
+.nav-links{display:flex;gap:28px;align-items:center;}
+.nav-links a{color:var(--cream);font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;opacity:.7;transition:all .3s;position:relative;}
+.nav-links a:hover{opacity:1;color:var(--pink-bright);}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);transition:width .3s;}
 .nav-links a:hover::after{width:100%;}
-.cart-btn{position:relative;background:var(--black-card);border:1px solid rgba(212,175,55,.3);border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;}
-.cart-btn:hover{border-color:var(--gold);box-shadow:0 0 16px rgba(212,175,55,.3);}
-.cart-btn svg{width:20px;height:20px;fill:var(--gold);}
-.cart-count{position:absolute;top:-4px;right:-4px;background:var(--pink);color:var(--white);font-size:11px;font-weight:700;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
-@media(max-width:768px){.nav-links{display:none;}}
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 24px 60px;background:radial-gradient(ellipse at center,rgba(233,30,99,.08) 0%,var(--black) 70%);}
-.hero-logo{width:200px;height:200px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);box-shadow:0 0 40px rgba(212,175,55,.3),0 0 80px rgba(233,30,99,.15);margin:0 auto 32px;animation:float 4s ease-in-out infinite;}
-@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
-.hero h1{font-family:'Pacifico',cursive;font-size:clamp(2.5rem,8vw,5rem);background:linear-gradient(135deg,var(--pink) 0%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2;}
-.hero p{font-size:clamp(1rem,2.5vw,1.3rem);color:var(--gray-light);max-width:500px;margin:0 auto 40px;}
-.hero-btn{display:inline-block;padding:16px 48px;background:linear-gradient(135deg,var(--pink) 0%,var(--pink-dark) 100%);color:var(--white);text-decoration:none;border-radius:50px;font-weight:600;font-size:16px;letter-spacing:1px;text-transform:uppercase;box-shadow:0 8px 24px rgba(233,30,99,.4);transition:all .3s;position:relative;overflow:hidden;}
-.hero-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(233,30,99,.5);}
-section{position:relative;z-index:1;padding:80px 24px;}
+.cart-btn{position:relative;background:linear-gradient(135deg,var(--pink),var(--pink-bright));border:none;width:42px;height:42px;border-radius:50%;cursor:pointer;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(255,23,68,.3);transition:all .3s;}
+.cart-btn:hover{transform:scale(1.08);}
+.cart-count{position:absolute;top:-4px;right:-4px;background:var(--pink-bright);color:#fff;font-size:.65rem;font-weight:700;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--black);}
+.cart-count.hidden{display:none;}
+
+/* ===== BUTTONS ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--pink),var(--pink-bright));color:var(--cream);padding:15px 40px;border-radius:50px;font-size:.74rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;font-family:'Outfit',sans-serif;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(255,23,68,.25);transition:all .3s;}
+.btn::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(120deg,transparent,var(--gold-soft),transparent);animation:shimmer 2.8s ease-in-out infinite;}
+@keyframes shimmer{0%{left:-100%;}50%,100%{left:100%;}}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,23,68,.4);}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-bright));color:var(--black);box-shadow:0 4px 20px rgba(255,215,0,.25);}
+.btn-gold:hover{box-shadow:0 8px 30px rgba(255,215,0,.4);}
+.btn-outline{background:transparent;border:1px solid var(--glass-border);color:var(--cream);box-shadow:none;}
+.btn-outline:hover{border-color:var(--pink-bright);background:var(--pink-soft);box-shadow:none;}
+
+/* ===== HERO ===== */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at center,rgba(255,64,129,.08),transparent 60%),var(--black);}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 0%,rgba(10,10,10,.5) 100%);z-index:1;}
+.hero-particles{position:absolute;inset:0;overflow:hidden;z-index:0;}
+.float-candy{position:absolute;border-radius:50%;opacity:.3;animation:float 6s ease-in-out infinite;}
+.float-candy:nth-child(1){width:60px;height:60px;background:linear-gradient(135deg,var(--pink),var(--gold));top:15%;left:10%;animation-delay:0s;}
+.float-candy:nth-child(2){width:40px;height:40px;background:linear-gradient(135deg,var(--gold),var(--pink-bright));top:60%;left:80%;animation-delay:1s;}
+.float-candy:nth-child(3){width:50px;height:50px;background:linear-gradient(135deg,var(--pink-bright),var(--gold));top:80%;left:20%;animation-delay:2s;}
+.float-candy:nth-child(4){width:35px;height:35px;background:linear-gradient(135deg,var(--gold),var(--pink));top:30%;left:85%;animation-delay:3s;}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-30px) rotate(180deg);}}
+.hero-content{position:relative;z-index:2;max-width:700px;padding:0 24px;}
+.hero h1{font-size:clamp(3.5rem,10vw,6.5rem);letter-spacing:4px;margin-bottom:16px;line-height:.95;}
+.hero h1 .accent{background:linear-gradient(135deg,var(--pink-bright),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-tagline{font-size:1.1rem;color:var(--muted);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;font-weight:500;}
+.hero-sub{font-size:.95rem;color:var(--muted);max-width:480px;margin:0 auto 36px;line-height:1.9;}
+.hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.hero-stats{display:flex;gap:48px;justify-content:center;margin-top:60px;flex-wrap:wrap;}
+.hero-stat{text-align:center;}
+.hero-stat .num{font-family:'Bebas Neue';font-size:2.5rem;color:var(--gold);letter-spacing:1px;}
+.hero-stat .lbl{font-size:.65rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;}
+
+/* ===== SECTION TITLE ===== */
 .section-title{text-align:center;margin-bottom:60px;}
-.section-title h2{font-family:'Pacifico',cursive;font-size:clamp(2rem,5vw,3.5rem);color:var(--white);margin-bottom:12px;}
-.section-title h2 span{background:linear-gradient(135deg,var(--pink) 0%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.section-title p{color:var(--gray-light);font-size:15px;max-width:500px;margin:0 auto;}
-.shop{background:linear-gradient(180deg,var(--black) 0%,var(--black-soft) 100%);}
-.product-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:28px;}
-.product-card{background:var(--black-card);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(212,175,55,.1);transition:all .4s;position:relative;}
-.product-card:hover{transform:translateY(-6px);border-color:rgba(212,175,55,.4);box-shadow:var(--shadow),0 0 24px rgba(233,30,99,.15);}
-.product-img-wrap{position:relative;overflow:hidden;aspect-ratio:1;background:#000;}
-.product-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.section-title .label{color:var(--pink-bright);font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-weight:700;margin-bottom:10px;display:block;}
+.section-title h2{font-size:clamp(2rem,5vw,3.2rem);letter-spacing:2px;}
+.section-title p{color:var(--muted);font-size:.9rem;max-width:540px;margin:14px auto 0;}
+
+/* ===== SHOP ===== */
+.shop{background:linear-gradient(180deg,rgba(10,10,10,.95) 0%,rgba(18,18,18,.92) 100%);}
+.shop-filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px;}
+.filter-btn{background:var(--glass);border:1px solid var(--glass-border);color:var(--cream);padding:10px 24px;border-radius:50px;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;cursor:pointer;transition:all .3s;font-family:'Outfit',sans-serif;}
+.filter-btn:hover{border-color:var(--pink-soft);background:var(--pink-soft);}
+.filter-btn.active{background:linear-gradient(135deg,var(--pink),var(--pink-bright));border-color:var(--pink-bright);}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;}
+.product-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.04);border-radius:20px;overflow:hidden;transition:all .4s;cursor:pointer;position:relative;}
+.product-card:hover{transform:translateY(-6px);border-color:rgba(255,64,129,.3);box-shadow:0 20px 50px rgba(0,0,0,.4);}
+.product-img-wrap{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:20px;position:relative;overflow:hidden;background:radial-gradient(circle at center,rgba(255,64,129,.04),transparent 70%);}
+.product-img-wrap img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 8px 24px rgba(0,0,0,.4));transition:transform .4s;z-index:1;}
 .product-card:hover .product-img-wrap img{transform:scale(1.08);}
-.product-badge{position:absolute;top:12px;left:12px;background:rgba(233,30,99,.9);color:var(--white);padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
+.product-badge{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,var(--pink),var(--pink-bright));color:#fff;font-size:.6rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;padding:4px 10px;border-radius:20px;z-index:2;}
+.product-badge.gold{background:linear-gradient(135deg,var(--gold),var(--gold-bright));color:var(--black);}
 .product-info{padding:20px;}
-.product-name{font-size:16px;font-weight:600;margin-bottom:6px;color:var(--white);}
-.product-desc{font-size:13px;color:var(--gray);margin-bottom:16px;min-height:36px;}
-.size-selector{display:flex;gap:8px;margin-bottom:12px;}
-.size-btn{flex:1;padding:8px;background:var(--black-soft);border:1px solid rgba(212,175,55,.2);border-radius:8px;color:var(--gray-light);font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;text-align:center;}
-.size-btn.active{background:linear-gradient(135deg,var(--pink),var(--pink-dark));border-color:var(--pink);color:var(--white);}
-.size-btn:hover:not(.active){border-color:var(--gold);color:var(--gold);}
-.add-cart-btn{width:100%;padding:12px;background:linear-gradient(135deg,var(--gold-dark) 0%,var(--gold) 100%);color:var(--black);border:none;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;text-transform:uppercase;letter-spacing:1px;transition:all .3s;}
-.add-cart-btn:hover{box-shadow:0 4px 16px rgba(212,175,55,.4);transform:translateY(-1px);}
-.gallery{background:var(--black-soft);}
-.gallery-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;}
-.gallery-item{position:relative;overflow:hidden;border-radius:8px;aspect-ratio:1;cursor:pointer;}
-.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
-.gallery-item:hover img{transform:scale(1.12);}
-.gallery-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(233,30,99,.2) 0%,transparent 50%);opacity:0;transition:opacity .3s;}
+.product-name{font-size:.95rem;font-weight:600;margin-bottom:4px;letter-spacing:.5px;}
+.product-cat{font-size:.65rem;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;}
+.product-bottom{display:flex;align-items:center;justify-content:space-between;}
+.product-price{font-family:'Bebas Neue';font-size:1.6rem;color:var(--gold);letter-spacing:1px;}
+.add-cart-btn{background:linear-gradient(135deg,var(--pink),var(--pink-bright));color:#fff;border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;flex-shrink:0;}
+.add-cart-btn:hover{transform:scale(1.15);box-shadow:0 4px 14px rgba(255,23,68,.4);}
+.add-cart-btn svg{width:16px;height:16px;}
+
+/* ===== SIZES / PRICING ===== */
+.sizes{background:var(--black);}
+.size-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:900px;margin:0 auto;}
+.size-card{background:rgba(255,255,255,.03);border:1px solid var(--glass-border);border-radius:24px;padding:40px 28px;text-align:center;transition:all .4s;position:relative;overflow:hidden;}
+.size-card:hover{border-color:rgba(255,215,0,.3);transform:translateY(-6px);}
+.size-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--pink),var(--gold));}
+.size-icon{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--pink-soft),var(--gold-soft));display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:'Bebas Neue';font-size:1.5rem;color:var(--gold);}
+.size-card h3{font-size:1.6rem;margin-bottom:8px;letter-spacing:1px;}
+.size-price{font-family:'Bebas Neue';font-size:3rem;color:var(--gold);margin-bottom:12px;letter-spacing:1px;}
+.size-desc{color:var(--muted);font-size:.82rem;line-height:1.8;}
+.size-card.featured{border-color:rgba(255,215,0,.3);background:rgba(255,215,0,.03);}
+.size-card.featured::after{content:'MOST POPULAR';position:absolute;top:16px;right:-32px;transform:rotate(45deg);background:linear-gradient(135deg,var(--gold),var(--gold-bright));color:var(--black);font-size:.55rem;font-weight:700;letter-spacing:1px;padding:4px 40px;}
+
+/* ===== ABOUT ===== */
+.about{background:linear-gradient(180deg,rgba(18,18,18,.95) 0%,rgba(10,10,10,.92) 100%);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1000px;margin:0 auto;}
+.about-text h2{font-size:2.5rem;margin-bottom:20px;letter-spacing:2px;}
+.about-text p{color:var(--muted);font-size:.92rem;line-height:2;margin-bottom:16px;}
+.about-visual{display:flex;justify-content:center;align-items:center;}
+.about-circle{width:300px;height:300px;border-radius:50%;background:conic-gradient(from 0deg,var(--pink),var(--gold),var(--pink-bright),var(--gold),var(--pink));display:flex;align-items:center;justify-content:center;position:relative;animation:spin 20s linear infinite;}
+@keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+.about-circle::before{content:'';position:absolute;inset:8px;border-radius:50%;background:var(--black);}
+.about-circle-text{position:relative;z-index:1;text-align:center;animation:spin 20s linear infinite reverse;}
+.about-circle-text .kk{font-family:'Bebas Neue';font-size:4rem;background:linear-gradient(135deg,var(--pink-bright),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:2px;}
+
+/* ===== GALLERY ===== */
+.gallery{background:var(--black);}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;max-width:1000px;margin:0 auto;}
+.gallery-item{aspect-ratio:1/1;border-radius:16px;overflow:hidden;position:relative;cursor:pointer;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.gallery-item:hover img{transform:scale(1.1);}
+.gallery-item::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(10,10,10,.8));opacity:0;transition:opacity .3s;}
 .gallery-item:hover::after{opacity:1;}
-.story{background:linear-gradient(180deg,var(--black-soft) 0%,var(--black) 100%);text-align:center;}
-.story-content{max-width:700px;margin:0 auto;}
-.story-img{width:100%;max-width:400px;border-radius:var(--radius);margin:0 auto 32px;border:2px solid rgba(212,175,55,.3);box-shadow:var(--shadow);}
-.story-text h3{font-family:'Pacifico',cursive;font-size:2rem;color:var(--pink-light);margin-bottom:20px;}
-.story-text p{color:var(--gray-light);font-size:16px;margin-bottom:16px;line-height:1.8;}
-.story-stats{display:flex;justify-content:center;gap:48px;margin-top:40px;flex-wrap:wrap;}
-.story-stat{text-align:center;}
-.story-stat .num{font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,var(--pink) 0%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.story-stat .label{font-size:13px;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
-.raffle{background:radial-gradient(ellipse at center,rgba(233,30,99,.1) 0%,var(--black) 70%);text-align:center;}
-.raffle-content{max-width:600px;margin:0 auto;}
-.raffle-img{width:100%;max-width:350px;border-radius:var(--radius);margin:0 auto 32px;border:2px solid var(--pink);box-shadow:0 0 30px rgba(233,30,99,.3);}
-.raffle-box{background:var(--black-card);border:1px solid rgba(233,30,99,.3);border-radius:var(--radius);padding:40px;margin-top:32px;}
-.raffle-box h3{font-size:1.5rem;color:var(--gold);margin-bottom:12px;}
-.raffle-box p{color:var(--gray-light);margin-bottom:24px;}
-.raffle-price{font-size:3rem;font-weight:800;color:var(--pink);margin-bottom:24px;}
-.raffle-btn{display:inline-block;padding:16px 48px;background:linear-gradient(135deg,var(--pink) 0%,var(--pink-dark) 100%);color:var(--white);border:none;border-radius:50px;font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:1px;cursor:pointer;box-shadow:0 8px 24px rgba(233,30,99,.4);transition:all .3s;}
-.raffle-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(233,30,99,.5);}
-.faq{background:var(--black-soft);}
-.faq-list{max-width:700px;margin:0 auto;}
-.faq-item{background:var(--black-card);border:1px solid rgba(212,175,55,.1);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;}
-.faq-q{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:15px;color:var(--white);transition:all .2s;}
-.faq-q:hover{color:var(--pink-light);}
-.faq-q .icon{width:24px;height:24px;display:flex;align-items:center;justify-content:center;transition:transform .3s;color:var(--gold);font-size:20px;}
-.faq-item.open .faq-q .icon{transform:rotate(45deg);}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;}
-.faq-item.open .faq-a{max-height:300px;}
-.faq-a-inner{padding:0 24px 20px;color:var(--gray-light);font-size:14px;line-height:1.7;}
-footer{background:var(--black);padding:60px 24px 40px;text-align:center;border-top:1px solid rgba(212,175,55,.15);}
-.footer-logo{width:80px;height:80px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);margin:0 auto 20px;}
-.footer-tagline{font-family:'Pacifico',cursive;font-size:1.5rem;background:linear-gradient(135deg,var(--pink) 0%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px;}
-.footer-social{display:inline-flex;align-items:center;gap:10px;padding:12px 32px;background:linear-gradient(135deg,#E1306C 0%,#C13584 100%);color:var(--white);text-decoration:none;border-radius:50px;font-weight:600;font-size:14px;margin:20px 0;transition:all .3s;}
-.footer-social:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(225,48,108,.4);}
-.footer-checkout{display:inline-flex;align-items:center;gap:10px;padding:12px 32px;background:linear-gradient(135deg,var(--gold-dark) 0%,var(--gold) 100%);color:var(--black);text-decoration:none;border-radius:50px;font-weight:700;font-size:14px;transition:all .3s;}
-.footer-checkout:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,175,55,.4);}
-.footer-copy{margin-top:32px;font-size:12px;color:var(--gray);}
-.footer-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
-.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1500;opacity:0;pointer-events:none;transition:opacity .3s;}
+
+/* ===== TAG TO SAVE ===== */
+.tag-save{background:linear-gradient(135deg,rgba(255,64,129,.06),rgba(255,215,0,.04));border:1px solid rgba(255,64,129,.15);border-radius:24px;padding:48px;text-align:center;max-width:800px;margin:0 auto;position:relative;overflow:hidden;}
+.tag-save h3{font-size:2rem;margin-bottom:16px;letter-spacing:1px;}
+.tag-save p{color:var(--muted);font-size:.9rem;line-height:1.8;margin-bottom:24px;}
+.tag-save-steps{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:28px;}
+.tag-step{display:flex;align-items:center;gap:12px;}
+.tag-step-num{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--gold));color:var(--black);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;}
+.tag-step-text{font-size:.8rem;color:var(--cream);}
+
+/* ===== FAQ ===== */
+.faq{background:linear-gradient(180deg,rgba(10,10,10,.95) 0%,rgba(18,18,18,.92) 100%);}
+.faq-grid{max-width:800px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.faq-item{background:rgba(255,255,255,.03);border:1px solid var(--glass-border);border-radius:12px;overflow:hidden;transition:all .3s;}
+.faq-item:hover{border-color:rgba(255,64,129,.2);background:rgba(255,255,255,.04);}
+.faq-q{padding:14px 18px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-weight:600;font-size:.82rem;transition:all .3s;gap:8px;}
+.faq-q:hover{color:var(--pink-bright);}
+.faq-q .icon{width:24px;height:24px;border-radius:50%;background:rgba(255,64,129,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;}
+.faq-q .icon svg{width:12px;height:12px;color:var(--pink-bright);transition:transform .3s;}
+.faq-item.open .faq-q .icon svg{transform:rotate(45deg);}
+.faq-item.open .faq-q{color:var(--pink-bright);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s;}
+.faq-item.open .faq-a{max-height:200px;padding:0 18px 14px;}
+.faq-a p{color:var(--muted);font-size:.8rem;line-height:1.8;}
+
+/* ===== FOOTER ===== */
+.footer{position:relative;background:linear-gradient(180deg,var(--black) 0%,var(--black-2) 100%);padding:80px 0 30px;}
+.footer-cta{text-align:center;margin-bottom:50px;}
+.footer-logo-circle{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--gold));display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue';font-size:2rem;color:var(--black);font-weight:700;margin:0 auto 20px;border:2px solid var(--gold);box-shadow:0 0 24px rgba(255,215,0,.2);}
+.footer-cta h3{font-size:1.8rem;margin-bottom:12px;letter-spacing:1px;}
+.footer-cta p{color:var(--muted);font-size:.88rem;margin-bottom:24px;}
+.ig-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--pink),var(--pink-bright));color:#fff;padding:14px 32px;border-radius:50px;font-size:.74rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(255,23,68,.25);}
+.ig-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,23,68,.4);}
+.ig-btn svg{width:18px;height:18px;}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:800px;margin:0 auto;padding-top:40px;border-top:1px solid var(--glass-border);}
+.footer-col p{color:var(--muted);font-size:.82rem;line-height:1.8;}
+.footer-col h4{font-size:.9rem;margin-bottom:12px;letter-spacing:1px;color:var(--gold);}
+.footer-bottom{text-align:center;padding-top:30px;margin-top:30px;border-top:1px solid var(--glass-border);}
+.footer-bottom p{color:var(--muted-dark);font-size:.72rem;letter-spacing:1px;}
+
+/* ===== CART DRAWER ===== */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s;}
 .cart-overlay.open{opacity:1;pointer-events:all;}
-.cart-drawer{position:fixed;top:0;right:-400px;width:380px;max-width:90vw;height:100vh;background:var(--black-soft);z-index:1600;transition:right .3s;overflow-y:auto;border-left:1px solid rgba(212,175,55,.2);}
-.cart-drawer.open{right:0;}
-.cart-header{padding:20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(212,175,55,.1);}
-.cart-header h3{font-size:18px;font-weight:600;color:var(--gold);}
-.cart-close{background:none;border:none;color:var(--gray);font-size:24px;cursor:pointer;transition:color .2s;}
-.cart-close:hover{color:var(--pink);}
-.cart-items{padding:20px;}
-.cart-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05);}
-.cart-item img{width:60px;height:60px;border-radius:8px;object-fit:cover;}
+.cart-drawer{position:fixed;top:0;right:0;width:400px;max-width:100vw;height:100vh;background:var(--black-2);z-index:300;transform:translateX(100%);transition:transform .4s cubic-bezier(.17,.67,.32,1);display:flex;flex-direction:column;border-left:1px solid var(--glass-border);}
+.cart-drawer.open{transform:translateX(0);}
+.cart-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--glass-border);}
+.cart-header h3{font-size:1.2rem;letter-spacing:1px;}
+.cart-close{background:none;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;transition:color .3s;}
+.cart-close:hover{color:var(--pink-bright);}
+.cart-items{flex:1;overflow-y:auto;padding:16px 24px;}
+.cart-empty{text-align:center;color:var(--muted);padding:60px 0;font-size:.88rem;}
+.cart-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.04);align-items:center;}
+.cart-item-img{width:60px;height:60px;border-radius:12px;overflow:hidden;flex-shrink:0;background:var(--black-3);display:flex;align-items:center;justify-content:center;}
+.cart-item-img img{width:100%;height:100%;object-fit:contain;}
 .cart-item-info{flex:1;}
-.cart-item-name{font-size:14px;font-weight:500;}
-.cart-item-size{font-size:12px;color:var(--gray);}
-.cart-item-price{color:var(--gold);font-weight:600;font-size:14px;}
-.cart-item-remove{background:none;border:none;color:var(--gray);font-size:12px;cursor:pointer;transition:color .2s;}
+.cart-item-info h4{font-size:.82rem;font-weight:600;margin-bottom:2px;}
+.cart-item-info .price{color:var(--gold);font-size:.82rem;font-weight:600;}
+.cart-item-info .size{color:var(--muted);font-size:.72rem;}
+.cart-item-remove{background:none;border:none;color:var(--muted);cursor:pointer;font-size:1.1rem;transition:color .3s;padding:4px;}
 .cart-item-remove:hover{color:var(--pink);}
-.cart-empty{text-align:center;padding:60px 20px;color:var(--gray);}
-.cart-footer{padding:20px;border-top:1px solid rgba(212,175,55,.1);position:sticky;bottom:0;background:var(--black-soft);}
-.cart-total{display:flex;justify-content:space-between;margin-bottom:16px;font-size:18px;font-weight:600;}
-.cart-total .amount{color:var(--gold);}
-.cart-checkout-btn{width:100%;padding:16px;background:linear-gradient(135deg,var(--pink) 0%,var(--pink-dark) 100%);color:var(--white);border:none;border-radius:var(--radius);font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:1px;cursor:pointer;transition:all .3s;}
-.cart-checkout-btn:hover{box-shadow:0 8px 24px rgba(233,30,99,.4);}
-.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--black-card);border:1px solid var(--gold);border-radius:50px;padding:12px 28px;color:var(--gold);font-weight:600;font-size:14px;z-index:2000;opacity:0;transition:all .3s;box-shadow:0 8px 24px rgba(0,0,0,.5);}
-.toast.show{transform:translateX(-50%) translateY(0);opacity:1;}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s;}
+.cart-footer{padding:20px 24px;border-top:1px solid var(--glass-border);}
+.cart-total{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;font-size:1rem;font-weight:600;}
+.cart-total .amount{font-family:'Bebas Neue';font-size:1.8rem;color:var(--gold);letter-spacing:1px;}
+.cart-payments{display:flex;gap:10px;flex-direction:column;}
+.cart-payments .btn{width:100%;justify-content:center;}
+
+/* ===== SIZE MODAL ===== */
+.size-modal{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);z-index:400;display:none;align-items:center;justify-content:center;padding:24px;}
+.size-modal.show{display:flex;}
+.size-modal-content{background:var(--black-2);border:1px solid var(--glass-border);border-radius:24px;padding:40px;max-width:440px;width:100%;text-align:center;animation:fadeIn .4s;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.size-modal-content h3{font-size:1.6rem;margin-bottom:8px;letter-spacing:1px;}
+.size-modal-content p{color:var(--muted);font-size:.82rem;margin-bottom:24px;}
+.size-options{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;}
+.size-option{background:rgba(255,255,255,.03);border:1px solid var(--glass-border);border-radius:16px;padding:20px 12px;cursor:pointer;transition:all .3s;}
+.size-option:hover{border-color:var(--pink-bright);background:var(--pink-soft);}
+.size-option.selected{border-color:var(--gold);background:var(--gold-soft);}
+.size-option .size-name{font-weight:600;font-size:.82rem;margin-bottom:4px;}
+.size-option .size-price{font-family:'Bebas Neue';font-size:1.4rem;color:var(--gold);}
+
+/* ===== REVEAL ===== */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s;}
 .reveal.visible{opacity:1;transform:translateY(0);}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .hero h1{font-size:3.5rem;}
+  .about-grid{grid-template-columns:1fr;gap:40px;}
+  .size-grid{grid-template-columns:1fr;max-width:400px;}
+  .faq-grid{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr;text-align:center;}
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
+  .product-info{padding:14px;}
+  .product-name{font-size:.82rem;}
+  .hero-stats{gap:24px;}
+}
+
+/* ===== PRODUCT CAROUSEL ===== */
+.carousel{position:relative;overflow:hidden;padding:20px 0 40px;margin-bottom:20px;}
+.carousel-track{display:flex;gap:20px;animation:slideCarousel 30s linear infinite;width:max-content;}
+.carousel:hover .carousel-track{animation-play-state:paused;}
+.carousel-item{width:200px;flex-shrink:0;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:20px;overflow:hidden;transition:all .3s;cursor:pointer;}
+.carousel-item:hover{transform:translateY(-6px);border-color:rgba(255,64,129,.3);box-shadow:0 12px 30px rgba(0,0,0,.3);}
+.carousel-img{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:16px;background:radial-gradient(circle at center,rgba(255,64,129,.04),transparent 70%);}
+.carousel-img img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 6px 18px rgba(0,0,0,.3));}
+.carousel-info{padding:12px 16px;text-align:center;}
+.carousel-info .cname{font-size:.78rem;font-weight:600;color:var(--cream);margin-bottom:4px;}
+.carousel-info .cdesc{font-size:.62rem;color:var(--muted);line-height:1.4;}
+.carousel-info .cprice{font-family:'Bebas Neue';font-size:1.2rem;color:var(--gold);margin-top:6px;}
+@keyframes slideCarousel{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
 </style>
 </head>
 <body>
-<div class="sparkle-bg" id="sparkleBg"></div>
-<header>
-<nav class="nav">
-<img src="https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/acc1736b7_kandy_k_logo.png" alt="Kandy K Shop" class="nav-logo">
-<ul class="nav-links">
-<li><a href="#shop">Shop</a></li>
-<li><a href="#gallery">Gallery</a></li>
-<li><a href="#story">Story</a></li>
-<li><a href="#raffle">Raffle</a></li>
-<li><a href="#faq">FAQ</a></li>
-</ul>
-<button class="cart-btn" onclick="toggleCart()">
-<svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
-<span class="cart-count" id="cartCount" style="display:none">0</span>
-</button>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-circle">KK</div>
+    </a>
+    <div class="nav-links">
+      <a href="#shop">Shop</a>
+      <a href="#sizes">Sizes</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <button class="cart-btn" onclick="toggleCart()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <span class="cart-count hidden" id="cartCount">0</span>
+    </button>
+  </div>
 </nav>
-</header>
-<section class="hero">
-<div class="reveal">
-<img src="https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/acc1736b7_kandy_k_logo.png" alt="Kandy K Shop" class="hero-logo">
-<h1>Kandy K Shop</h1>
-<p>Premium chamoy candy made fresh with love. Party trays, specialty treats, and seasonal favorites.</p>
-<a href="#shop" class="hero-btn"><span>Shop Now</span></a>
-</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-particles">
+    <div class="float-candy"></div>
+    <div class="float-candy"></div>
+    <div class="float-candy"></div>
+    <div class="float-candy"></div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-tagline">Premium Chamoy Candy</p>
+    <h1>Kandy <span class="accent">K</span> Shop</h1>
+    <p class="hero-sub">Bold flavors. Bold colors. Handcrafted chamoy candy treats made with love in Los Angeles. Sweet, spicy, and everything nice.</p>
+    <div class="hero-cta">
+      <a href="#shop" class="btn">Shop Now</a>
+      <a href="#sizes" class="btn btn-gold">View Sizes &amp; Pricing</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">15+</div><div class="lbl">Flavors</div></div>
+      <div class="hero-stat"><div class="num">3</div><div class="lbl">Sizes</div></div>
+      <div class="hero-stat"><div class="num">100%</div><div class="lbl">Handmade</div></div>
+      <div class="hero-stat"><div class="num">LA</div><div class="lbl">Made With Love</div></div>
+    </div>
+  </div>
 </section>
-<section class="shop" id="shop">
-<div class="section-title reveal">
-<h2>Our <span>Collection</span></h2>
-<p>Fresh chamoy candy in three sizes — Small $7, Medium $11, Large $15</p>
-</div>
-<div class="product-grid" id="productGrid"></div>
+
+<!-- ===== SHOP ===== -->
+<section class="shop section" id="shop">
+  <div class="wrap">
+    <div class="section-title">
+      <span class="label">The Collection</span>
+      <h2>Shop All Treats</h2>
+      <p>Every bag packed fresh. Every flavor hitting different. Find your sweet and spicy fix.</p>
+    </div>
+    <div class="shop-filters">
+      <button class="filter-btn active" data-cat="all">All</button>
+      <button class="filter-btn" data-cat="chamoy">Chamoy</button>
+      <button class="filter-btn" data-cat="gummy">Gummies</button>
+      <button class="filter-btn" data-cat="party">Party Trays</button>
+      <button class="filter-btn" data-cat="specialty">Specialty</button>
+    </div>
+    <!-- Featured Product Carousel -->
+    <div class="carousel" id="featuredCarousel">
+      <div class="carousel-track" id="carouselTrack"></div>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
 </section>
-<section class="gallery" id="gallery">
-<div class="section-title reveal">
-<h2>Candy <span>Gallery</span></h2>
-<p>A look at our sweet creations</p>
-</div>
-<div class="gallery-grid" id="galleryGrid"></div>
+
+<!-- ===== SIZES / PRICING ===== -->
+<section class="sizes section" id="sizes">
+  <div class="wrap">
+    <div class="section-title">
+      <span class="label">Pick Your Size</span>
+      <h2>Sizes &amp; Pricing</h2>
+      <p>Three sizes. Endless flavor combinations. Every size packed fresh to order.</p>
+    </div>
+    <div class="size-grid">
+      <div class="size-card">
+        <div class="size-icon">S</div>
+        <h3>Small</h3>
+        <div class="size-price">$7</div>
+        <p class="size-desc">Perfect for a personal treat. Great for trying new flavors or satisfying a quick craving.</p>
+      </div>
+      <div class="size-card featured">
+        <div class="size-icon">M</div>
+        <h3>Medium</h3>
+        <div class="size-price">$11</div>
+        <p class="size-desc">Our most popular size! Perfect for sharing with a friend or keeping all to yourself.</p>
+      </div>
+      <div class="size-card">
+        <div class="size-icon">L</div>
+        <h3>Large</h3>
+        <div class="size-price">$15</div>
+        <p class="size-desc">Party-ready! Great for events, movie nights, or when you just need extra. Maximum flavor.</p>
+      </div>
+    </div>
+  </div>
 </section>
-<section class="story" id="story">
-<div class="story-content reveal">
-<img src="https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/4b60d62e3_anniversary_graphic.png" alt="1 Year Anniversary" class="story-img">
-<div class="story-text">
-<h3>Made with Love</h3>
-<p>Kandy K Shop started with a passion for chamoy candy and a love for bringing people together. Every batch is made fresh by hand, using the finest ingredients and our signature chamoy blend.</p>
-<p>From party trays to specialty treats, every order is crafted with care and packed with flavor. We've been serving our community for over a year, and we're just getting started.</p>
-</div>
-<div class="story-stats">
-<div class="story-stat"><div class="num">1+</div><div class="label">Years</div></div>
-<div class="story-stat"><div class="num">500+</div><div class="label">Orders</div></div>
-<div class="story-stat"><div class="num">20+</div><div class="label">Products</div></div>
-<div class="story-stat"><div class="num">100%</div><div class="label">Fresh</div></div>
-</div>
-</div>
+
+<!-- ===== ABOUT ===== -->
+<section class="about section" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-visual" style="flex-direction:column;gap:20px;">
+        <div style="width:280px;height:350px;border-radius:20px;overflow:hidden;border:3px solid var(--pink);box-shadow:0 20px 60px rgba(255,64,129,.2);">
+          <img src="https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/17d9ba8ec_752823096_18607305967020122_7639761860797697432_n.jpg" alt="Kandy K Shop owner" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div style="width:180px;height:180px;border-radius:50%;overflow:hidden;border:3px solid var(--gold);box-shadow:0 10px 30px rgba(255,215,0,.15);">
+          <img src="https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/3c2fc1970_623851533_18077605232596425_708882397009305899_n.jpg" alt="Kandy K Shop" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+      <div class="about-text">
+        <span style="color:var(--pink-bright);font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-weight:700;display:block;margin-bottom:10px;">Our Story</span>
+        <h2>From LA, With Love</h2>
+        <p>Born and raised in Los Angeles, the heart of Kandy K Shop beats with an appreciation for the small things in life — turning every delicious treat into something memorable.</p>
+        <p>Over the years, she's built a loyal following of clients across parties, events, gatherings, holidays, and every occasion worth celebrating. From intimate get-togethers to large-scale events, each order is crafted with care and intention.</p>
+        <p>Kandy K Shop also specializes in customized creations tailored to your event, theme, or vision. Whether it's a birthday, a holiday celebration, or a corporate gathering, every detail is personalized to make it unforgettable.</p>
+        <p>These candies are authentic — sourced directly from Mexico with an emphasis on real, natural ingredients. No artificial shortcuts, just genuine flavor that honors tradition while keeping things fresh and exciting.</p>
+        <p style="font-style:italic;color:var(--gold);">Sweet, spicy, tangy, savory — every bite tells a story.</p>
+      </div>
+    </div>
+  </div>
 </section>
-<section class="raffle" id="raffle">
-<div class="section-title reveal">
-<h2>$5 <span>Raffle</span></h2>
-<p>Enter to win a half dozen tamarindo strawberries</p>
-</div>
-<div class="raffle-content">
-<img src="https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/d873fc128_raffle_tamarindo.png" alt="Tamarindo Strawberries Raffle" class="raffle-img">
-<div class="raffle-box reveal">
-<h3>Half Dozen Tamarindo Strawberries</h3>
-<p>Enter our raffle for a chance to win a delicious half dozen tamarindo strawberries. Winner announced on Instagram.</p>
-<div class="raffle-price">$5</div>
-<button class="raffle-btn" onclick="showToast('Raffle entry added! Good luck!')">Enter to Win</button>
-</div>
-</div>
+
+<!-- ===== GALLERY ===== -->
+<section class="gallery section" id="gallery">
+  <div class="wrap">
+    <div class="section-title">
+      <span class="label">The Looks</span>
+      <h2>Gallery</h2>
+      <p>Every batch is a work of art. Check out our latest creations.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
 </section>
-<section class="faq" id="faq">
-<div class="section-title reveal">
-<h2>Questions?</h2>
-<p>Everything you need to know</p>
-</div>
-<div class="faq-list" id="faqList"></div>
+
+<!-- ===== TAG TO SAVE ===== -->
+<section class="section" style="background:var(--black);">
+  <div class="wrap">
+    <div class="tag-save">
+      <span style="color:var(--gold);font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-weight:700;display:block;margin-bottom:10px;">Tag to Save</span>
+      <h3>Get 10% Off Your Next Order</h3>
+      <p>Snap a photo with your Kandy K treats, tag us on Instagram <strong style="color:var(--pink-bright);">@kandykshop</strong>, and get an exclusive discount code sent straight to your DMs.</p>
+      <div class="tag-save-steps">
+        <div class="tag-step"><div class="tag-step-num">1</div><div class="tag-step-text">Order your treats</div></div>
+        <div class="tag-step"><div class="tag-step-num">2</div><div class="tag-step-text">Snap and tag @kandykshop</div></div>
+        <div class="tag-step"><div class="tag-step-num">3</div><div class="tag-step-text">Get 10% off code in DMs</div></div>
+      </div>
+    </div>
+  </div>
 </section>
-<footer>
-<img src="https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/acc1736b7_kandy_k_logo.png" alt="Kandy K Shop" class="footer-logo">
-<div class="footer-tagline">Kandy K Shop</div>
-<p style="color:var(--gray-light);margin-bottom:20px;">Chamoy candy made with love</p>
-<div class="footer-actions">
-<a href="https://www.instagram.com/kandykshop/" target="_blank" class="footer-social">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.35 2.68.94 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.12-1.38.66-.66 1.07-1.33 1.38-2.12.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.12C21.32 1.35 20.65.94 19.86.63 19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84c-3.4 0-6.16 2.76-6.16 6.16S8.6 18.16 12 18.16s6.16-2.76 6.16-6.16S15.4 5.84 12 5.84zm0 10.16c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z" fill="white"/><circle cx="18.41" cy="5.59" r="1.44" fill="white"/></svg>
-Follow on Instagram
-</a>
-<a href="#" class="footer-checkout" onclick="toggleCart();return false;">Ready to Checkout</a>
-</div>
-<p class="footer-copy">&copy; 2025 Kandy K Shop. All rights reserved. @kandykshop</p>
+
+<!-- ===== FAQ ===== -->
+<section class="faq section" id="faq">
+  <div class="wrap">
+    <div class="section-title">
+      <span class="label">Questions?</span>
+      <h2>FAQ</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">How fresh are the candies? <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div>
+        <div class="faq-a"><p>Every order is packed fresh to order. We make small batches daily to ensure maximum flavor and quality. Your candy ships within 24-48 hours of making.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What's the shelf life? <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div>
+        <div class="faq-a"><p>Our chamoy candy treats stay fresh for 2-3 weeks at room temperature. For best results, keep sealed and away from direct heat.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you offer local pickup? <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div>
+        <div class="faq-a"><p>Yes! We offer local pickup in the Los Angeles area. Select "Local Pickup" at checkout and we'll coordinate a time that works for you.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I customize my order? <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div>
+        <div class="faq-a"><p>Absolutely! Mix and match any flavors in any size. Just let us know your preferences in the order notes and we'll make it happen.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you do events and parties? <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div>
+        <div class="faq-a"><p>Yes! We offer party trays and bulk orders for events. DM us on Instagram @kandykshop for custom quotes and availability.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do I pay? <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div>
+        <div class="faq-a"><p>We accept Venmo, Zelle, and card payments via Stripe. Pick whichever's easiest for you at checkout!</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-cta">
+      <div class="footer-logo-circle">KK</div>
+      <h3>Join the Kandy K Fam</h3>
+      <p>Follow for new flavor drops, restocks, behind-the-scenes, and exclusive deals.</p>
+      <a href="https://www.instagram.com/kandykshop/" target="_blank" class="ig-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Follow @kandykshop
+      </a>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Kandy K Shop</h4>
+        <p>Premium chamoy candy, gummies and specialty treats. Handcrafted in LA with bold flavors and bolder colors. Sweet, spicy, unforgettable.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <p>Los Angeles, California<br>DM on Instagram to order<br>@kandykshop</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Kandy K Shop &middot; From LA, With Love &middot; All Rights Reserved</p>
+    </div>
+  </div>
 </footer>
+
+<!-- ===== CART DRAWER ===== -->
 <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
 <div class="cart-drawer" id="cartDrawer">
-<div class="cart-header">
-<h3>Your Cart</h3>
-<button class="cart-close" onclick="toggleCart()">&times;</button>
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">Your cart is empty. Time to get some treats!</div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-total">
+      <span>Total</span>
+      <span class="amount" id="cartTotal">$0.00</span>
+    </div>
+    <div class="cart-payments">
+      <button class="btn" onclick="checkout('venmo')">Pay with Venmo</button>
+      <button class="btn btn-outline" onclick="checkout('zelle')">Pay with Zelle</button>
+      <button class="btn btn-gold" onclick="checkout('stripe')">Pay with Card</button>
+    </div>
+  </div>
 </div>
-<div class="cart-items" id="cartItems"></div>
-<div class="cart-footer" id="cartFooter" style="display:none">
-<div class="cart-total"><span>Total</span><span class="amount" id="cartTotal">$0</span></div>
-<button class="cart-checkout-btn" onclick="showToast('Checkout coming soon! DM @kandykshop on Instagram to order.')">Checkout</button>
+
+<!-- ===== SIZE MODAL ===== -->
+<div class="size-modal" id="sizeModal" onclick="closeSizeModal(event)">
+  <div class="size-modal-content">
+    <h3 id="sizeModalName">Select Size</h3>
+    <p id="sizeModalDesc">Pick the size that's right for you</p>
+    <div class="size-options" id="sizeOptions">
+      <div class="size-option" data-size="Small" data-price="7" onclick="selectSize(this)">
+        <div class="size-name">Small</div>
+        <div class="size-price">$7</div>
+      </div>
+      <div class="size-option" data-size="Medium" data-price="11" onclick="selectSize(this)">
+        <div class="size-name">Medium</div>
+        <div class="size-price">$11</div>
+      </div>
+      <div class="size-option" data-size="Large" data-price="15" onclick="selectSize(this)">
+        <div class="size-name">Large</div>
+        <div class="size-price">$15</div>
+      </div>
+    </div>
+    <button class="btn" id="addToCartBtn" onclick="confirmAddToCart()" style="width:100%;justify-content:center;">Add to Cart</button>
+  </div>
 </div>
-</div>
-<div class="toast" id="toast"></div>
+
 <script>
-const PRODUCTS=[
-{id:'party_tray',name:'Party Tray',desc:'Gushers, watermelon rings, sour gummy worms, Jolly Rancher & Life Saver gummies',img:'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/550d6631b_party_tray.png',badge:'Best Seller'},
-{id:'bagged_candy',name:'Bagged Chamoy Candy',desc:'Your choice of chamoy candy in holographic bags — 3 sizes',img:'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/e08a265ae_bagged_candy_display.png',badge:'Popular'},
-{id:'chamoy_airheads',name:'Chamoy Airheads',desc:'Chamoy-coated Airheads strips — sweet, spicy, and tangy',img:'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/ab7ea7ecc_chamoy_airheads.png'},
-{id:'chamoy_balls',name:'Chamoy Candy Balls',desc:'Colorful cluster balls coated in chamoy — bursting with flavor',img:'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/035477634_chamoy_balls_red.png'},
-{id:'strawberries',name:'Chamoy Strawberries',desc:'Fresh strawberries coated in chamoy — sweet meets spicy',img:'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/7d006809a_strawberries_red_tray.png',badge:'Seasonal'},
-{id:'blow_pops',name:'Chamoy Blow Pops',desc:'Chamoy-coated Blow Pops on sticks — a fun twist on a classic',img:'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/d7eb2865c_blow_pops.png'},
-{id:'mini_party_tray',name:'Mini Party Tray',desc:'Compact 4-section tray with assorted chamoy candies',img:'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/e6930b52b_mini_party_tray.png'},
-{id:'mini_hearts',name:"Mini Hearts (Valentine's)",desc:'Heart-shaped container filled with chamoy candy — perfect for gifts',img:'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/ba90ed392_mini_hearts.png',badge:'Seasonal'},
-{id:'watermelon_gushers',name:'Watermelon Gushers',desc:'Chamoy-coated watermelon gushers in a holographic bag',img:'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/5d9740246_watermelon_gushers.png'},
-{id:'watermelon_gummies',name:'Watermelon Gummies',desc:'Sugar-coated watermelon gummies — sweet and chewy',img:'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/e8bdc61b5_watermelon_gummies.png'},
-{id:'easter_bunny_jar',name:'Easter Bunny Jar',desc:'Chamoy candy in a collectible bunny jar — seasonal favorite',img:'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/d0659a624_easter_bunny_jar.png',badge:'Seasonal'},
-{id:'jicama_cucumber',name:'Chamoy Jicama & Pepino',desc:'Fresh jicama and cucumber slices with chamoy powder',img:'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/d5f8ef314_jicama_cucumber.png'},
-{id:'chamoy_sauce',name:'Chamoy Sauce',desc:'Our signature chamoy sauce — perfect for dipping and drizzling',img:'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/7cc0dafaf_chamoy_sauce.png'},
+// ===== PRODUCT DATA =====
+const IMG_BASE = "https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e";
+const products = [
+  {id:1,name:"Chamoy Gushers",cat:"chamoy",img:IMG_BASE+"/ec46001c1_91020570c_2.png",featured:true,desc:"Sweet and tangy gushers filled with spicy chamoy sauce. A burst of sweet, sour, and chili in every bite."},
+  {id:2,name:"Spicy Mango Belts",cat:"chamoy",img:IMG_BASE+"/55cbabb65_0b26266f7_4.png",desc:"Fruity mango belts coated in chili powder and chamoy. Sweet, savory, and spicy all at once."},
+  {id:3,name:"Tamarind Sticks",cat:"chamoy",img:IMG_BASE+"/72f0eef61_6f86db5d6_5.png",desc:"Tangy tamarind sticks with a spicy chili kick. Classic Mexican candy with authentic flavor."},
+  {id:4,name:"Chamoy Gummy Bears",cat:"gummy",img:IMG_BASE+"/265467e1d_701a04f69_6.png",featured:true,desc:"Chewy gummy bears dipped in chamoy sauce and chili powder. Sweet meets spicy in the best way."},
+  {id:5,name:"Watermelon Chamoy",cat:"chamoy",img:IMG_BASE+"/8e32fbfa7_1390221c0_7.png",desc:"Sweet watermelon candy with tangy chamoy and a hint of chili. Refreshing and spicy."},
+  {id:6,name:"Mixed Fruit Party Tray",cat:"party",img:IMG_BASE+"/d881bfe80_4da09480e_8.png",featured:true,desc:"A mix of sweet, spicy, and tangy fruit candies. Perfect for parties and events. Feeds a crowd."},
+  {id:7,name:"Cherry Chamoy Bombs",cat:"specialty",img:IMG_BASE+"/968fe6a18_12254c580_9.png",desc:"Sweet cherry candies packed with spicy chamoy filling. An explosive mix of sweet and chili."},
+  {id:8,name:"Sour Worms Deluxe",cat:"gummy",img:IMG_BASE+"/df84f93f8_18d1e2079_10.png",desc:"Sour and sweet gummy worms with a salty kick. Classic sweet-and-sour flavor with a twist."},
+  {id:9,name:"Tropical Chamoy Mix",cat:"chamoy",img:IMG_BASE+"/230065b2f_08a7db234_11.png",desc:"Tropical fruit candies with chamoy and chili. Mango, pineapple, and passionfruit flavors with a spicy kick."},
+  {id:10,name:"Peach Rings Supreme",cat:"gummy",img:IMG_BASE+"/83caddb6f_99943059b_12.png",desc:"Sweet peach gummy rings dusted with chili powder. Sugary, spicy, and totally addictive."},
+  {id:11,name:"Chamoy Party Bucket",cat:"party",img:IMG_BASE+"/bdca22db8_945e7885d_16.png",desc:"Large bucket of mixed chamoy candies. Sweet, spicy, sour, and savory — something for everyone."},
+  {id:12,name:"Specialty Chamoy Flight",cat:"specialty",img:IMG_BASE+"/dc56496aa_39a944ee3_17.png",featured:true,desc:"A curated sampling of our best chamoy treats. Sweet, spicy, tangy, and savory in one flight."},
+  {id:13,name:"Rainbow Chamoy Blend",cat:"chamoy",img:IMG_BASE+"/f1c9a01c8_3a3e5ec87_21.png",desc:"Colorful mix of sweet and spicy chamoy candies. Fruity flavors with chili powder and chamoy sauce."},
+  {id:14,name:"Cucumber Chamoy Special",cat:"specialty",img:IMG_BASE+"/c4167baea_56618831e_23.png",desc:"Fresh cucumber with chamoy sauce, chili powder, and lime. A savory, spicy, and refreshing treat."},
+  {id:15,name:"Classic Chamoy Starter",cat:"specialty",img:IMG_BASE+"/e18e7b75a_4848aff7a_image.png",desc:"The perfect introduction to chamoy candy. A balanced mix of sweet, spicy, and tangy treats."},
+  {id:16,name:"Pink Candy Chamoy",cat:"chamoy",img:IMG_BASE+"/084f94dae_6600120a4_image.png",desc:"Sweet pink candies with a spicy chamoy center. Pretty, sweet, and packing heat."},
 ];
-const SIZES=[{name:'Small',price:7},{name:'Medium',price:11},{name:'Large',price:15}];
-const GALLERY_IMAGES=[
-'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/550d6631b_party_tray.png',
-'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/d7eb2865c_blow_pops.png',
-'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/ab7ea7ecc_chamoy_airheads.png',
-'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/035477634_chamoy_balls_red.png',
-'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/7d006809a_strawberries_red_tray.png',
-'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/1ea017c57_strawberries_closeup.png',
-'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/66bb3deec_strawberries_clamshell.png',
-'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/56287b69a_strawberries_white_tray.png',
-'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/d0659a624_easter_bunny_jar.png',
-'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/d5f8ef314_jicama_cucumber.png',
-'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/9024c7696_strawberries_gift_box.png',
-'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/01ed7f386_strawberries_extra.png',
-'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/e08a265ae_bagged_candy_display.png',
-'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/e6930b52b_mini_party_tray.png',
-'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/ba90ed392_mini_hearts.png',
-'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/5d9740246_watermelon_gushers.png',
-'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/e8bdc61b5_watermelon_gummies.png',
-'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/7cc0dafaf_chamoy_sauce.png',
-'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/58da90fba_airheads_alt.png',
-'https://media.base44.com/files/public/6a4e9d6e7eff63beda95751e/a495e0a5c_airheads_logo.png',
-];
-const FAQS=[
-{q:'How do I place an order?',a:'You can browse our collection, add items to your cart, and message us on Instagram @kandykshop to place your order. We\'ll confirm availability and arrange pickup or delivery.'},
-{q:'What sizes are available?',a:'Most of our bagged candies come in three sizes: Small ($7), Medium ($11), and Large ($15). Party trays and specialty items may have different pricing — check the product details.'},
-{q:'Do you offer delivery?',a:'Yes! We offer local delivery within the LA area. Delivery fees vary based on distance. We also offer pickup options — message us on Instagram for details.'},
-{q:'How fresh are the candies?',a:'All our candy is made fresh to order. We recommend consuming within 1-2 weeks for the best flavor. Chamoy strawberries should be enjoyed within 2-3 days.'},
-{q:'Do you make custom party trays?',a:'Absolutely! We can customize party trays for birthdays, holidays, and special events. DM us on Instagram with your request and we\'ll create something special for you.'},
-{q:'What is the $5 raffle?',a:'Our raffle gives you a chance to win a half dozen tamarindo strawberries for just $5. Winners are announced on our Instagram. Enter on our raffle page!'},
-{q:'Do you offer seasonal items?',a:'Yes! We have special items for holidays like Valentine\'s Day (Mini Hearts) and Easter (Bunny Jar). Follow us on Instagram to stay updated on seasonal offerings.'},
-];
-function renderProducts(){const grid=document.getElementById('productGrid');grid.innerHTML=PRODUCTS.map((p,i)=>`<div class="product-card reveal" style="transition-delay:${i*50}ms"><div class="product-img-wrap">${p.badge?`<div class="product-badge">${p.badge}</div>`:''}<img src="${p.img}" alt="${p.name}" loading="lazy"></div><div class="product-info"><div class="product-name">${p.name}</div><div class="product-desc">${p.desc}</div><div class="size-selector" data-product="${i}">${SIZES.map((s,j)=>`<div class="size-btn${j===1?' active':''}" data-size="${j}">${s.name} $${s.price}</div>`).join('')}</div><button class="add-cart-btn" onclick="addToCart(${i},this)">Add to Cart</button></div></div>`).join('');document.querySelectorAll('.size-selector').forEach(sel=>{sel.querySelectorAll('.size-btn').forEach(btn=>{btn.addEventListener('click',()=>{sel.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');});});});}
-function renderGallery(){const grid=document.getElementById('galleryGrid');grid.innerHTML=GALLERY_IMAGES.map((url,i)=>`<div class="gallery-item reveal" style="transition-delay:${i*30}ms"><img src="${url}" alt="Kandy K Shop Gallery ${i+1}" loading="lazy"></div>`).join('');}
-function renderFAQ(){const list=document.getElementById('faqList');list.innerHTML=FAQS.map((f,i)=>`<div class="faq-item reveal"><div class="faq-q" onclick="toggleFAQ(${i})">${f.q}<span class="icon">+</span></div><div class="faq-a"><div class="faq-a-inner">${f.a}</div></div></div>`).join('');}
-function toggleFAQ(i){const items=document.querySelectorAll('.faq-item');items.forEach((item,j)=>{if(j===i)item.classList.toggle('open');else item.classList.remove('open');});}
-let cart=[];
-function addToCart(productIdx,btn){const product=PRODUCTS[productIdx];const sizeBtns=btn.parentElement.querySelector('.size-selector').querySelectorAll('.size-btn');let sizeIdx=1;sizeBtns.forEach((b,i)=>{if(b.classList.contains('active'))sizeIdx=i;});const size=SIZES[sizeIdx];cart.push({id:product.id+'_'+sizeIdx,name:product.name,size:size.name,price:size.price,img:product.img});updateCart();showToast(product.name+' ('+size.name+') added!');btn.style.transform='scale(.95)';setTimeout(()=>btn.style.transform='',200);}
-function removeFromCart(idx){cart.splice(idx,1);updateCart();}
-function updateCart(){const count=cart.length;const countEl=document.getElementById('cartCount');countEl.textContent=count;countEl.style.display=count>0?'flex':'none';const itemsEl=document.getElementById('cartItems');const footerEl=document.getElementById('cartFooter');if(cart.length===0){itemsEl.innerHTML='<div class="cart-empty">Your cart is empty<br>Start shopping!</div>';footerEl.style.display='none';}else{itemsEl.innerHTML=cart.map((item,i)=>`<div class="cart-item"><img src="${item.img}" alt="${item.name}"><div class="cart-item-info"><div class="cart-item-name">${item.name}</div><div class="cart-item-size">${item.size} — $${item.price}</div></div><button class="cart-item-remove" onclick="removeFromCart(${i})">Remove</button></div>`).join('');const total=cart.reduce((sum,item)=>sum+item.price,0);document.getElementById('cartTotal').textContent='$'+total;footerEl.style.display='block';}}
-function toggleCart(){document.getElementById('cartDrawer').classList.toggle('open');document.getElementById('cartOverlay').classList.toggle('open');}
-let toastTimer;
-function showToast(msg){const toast=document.getElementById('toast');toast.textContent=msg;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),3000);}
-function createSparkles(){const bg=document.getElementById('sparkleBg');for(let i=0;i<40;i++){const s=document.createElement('div');s.className='sparkle';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*4+'s';s.style.animationDuration=(3+Math.random()*3)+'s';bg.appendChild(s);}}
-function setupReveal(){const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}
-renderProducts();renderGallery();renderFAQ();createSparkles();setupReveal();updateCart();
+
+// ===== CAROUSEL =====
+function initCarousel() {
+  const track = document.getElementById('carouselTrack');
+  if (!track) return;
+  // Use all products, duplicate for seamless loop
+  const items = [...products, ...products];
+  track.innerHTML = items.map(p => `
+    <div class="carousel-item" onclick="scrollToShop()">
+      <div class="carousel-img"><img src="${p.img}" alt="${p.name}" loading="lazy"></div>
+      <div class="carousel-info">
+        <div class="cname">${p.name}</div>
+        <div class="cdesc">${(p.desc || '').substring(0, 50)}...</div>
+        <div class="cprice">$7+</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function scrollToShop() {
+  document.getElementById('productGrid').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ===== CART =====
+let cart = [];
+
+function renderProducts(filter) {
+  filter = filter || 'all';
+  const grid = document.getElementById('productGrid');
+  const filtered = filter === 'all' ? products : products.filter(function(p){return p.cat === filter;});
+  grid.innerHTML = filtered.map(function(p){
+    return '<div class="product-card" onclick="openSizeModal('+p.id+')">'+
+      '<div class="product-img-wrap">'+
+        (p.featured ? '<span class="product-badge gold">Featured</span>' : '')+
+        '<img src="'+p.img+'" alt="'+p.name+'" loading="lazy">'+
+      '</div>'+
+      '<div class="product-info">'+
+        '<div class="product-name">'+p.name+'</div>'+
+        '<div class="product-cat">'+p.cat+'</div>'+
+        '<div class="product-bottom">'+
+          '<div class="product-price">$7+</div>'+
+          '<button class="add-cart-btn" onclick="event.stopPropagation();openSizeModal('+p.id+')">'+
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>'+
+          '</button>'+
+        '</div>'+
+      '</div>'+
+    '</div>';
+  }).join('');
+}
+
+function renderGallery() {
+  const grid = document.getElementById('galleryGrid');
+  grid.innerHTML = products.map(function(p){
+    return '<div class="gallery-item"><img src="'+p.img+'" alt="'+p.name+'" loading="lazy"></div>';
+  }).join('');
+}
+
+// ===== SIZE MODAL =====
+var modalProductId = null;
+var selectedSize = null;
+
+function openSizeModal(id) {
+  modalProductId = id;
+  var product = products.find(function(p){return p.id === id;});
+  document.getElementById('sizeModalName').textContent = product.name;
+  var opts = document.querySelectorAll('.size-option');
+  for (var i=0; i<opts.length; i++) opts[i].classList.remove('selected');
+  selectedSize = null;
+  document.getElementById('sizeModal').classList.add('show');
+}
+
+function closeSizeModal(e) {
+  if (e.target === document.getElementById('sizeModal')) {
+    document.getElementById('sizeModal').classList.remove('show');
+  }
+}
+
+function selectSize(el) {
+  var opts = document.querySelectorAll('.size-option');
+  for (var i=0; i<opts.length; i++) opts[i].classList.remove('selected');
+  el.classList.add('selected');
+  selectedSize = { size: el.getAttribute('data-size'), price: parseInt(el.getAttribute('data-price')) };
+}
+
+function confirmAddToCart() {
+  if (!modalProductId || !selectedSize) return;
+  var product = products.find(function(p){return p.id === modalProductId;});
+  cart.push({
+    id: Date.now(),
+    name: product.name,
+    size: selectedSize.size,
+    price: selectedSize.price,
+    img: product.img
+  });
+  updateCart();
+  document.getElementById('sizeModal').classList.remove('show');
+  var cartBtn = document.querySelector('.cart-btn');
+  cartBtn.style.transform = 'scale(1.2)';
+  setTimeout(function(){cartBtn.style.transform = '';}, 200);
+}
+
+function removeFromCart(id) {
+  cart = cart.filter(function(item){return item.id !== id;});
+  updateCart();
+}
+
+function updateCart() {
+  var count = cart.length;
+  var countEl = document.getElementById('cartCount');
+  var itemsEl = document.getElementById('cartItems');
+  var footerEl = document.getElementById('cartFooter');
+  
+  countEl.textContent = count;
+  countEl.classList.toggle('hidden', count === 0);
+  
+  if (cart.length === 0) {
+    itemsEl.innerHTML = '<div class="cart-empty">Your cart is empty. Time to get some treats!</div>';
+    footerEl.style.display = 'none';
+  } else {
+    itemsEl.innerHTML = cart.map(function(item){
+      return '<div class="cart-item">'+
+        '<div class="cart-item-img"><img src="'+item.img+'" alt="'+item.name+'"></div>'+
+        '<div class="cart-item-info">'+
+          '<h4>'+item.name+'</h4>'+
+          '<div class="size">'+item.size+'</div>'+
+          '<div class="price">$'+item.price+'</div>'+
+        '</div>'+
+        '<button class="cart-item-remove" onclick="removeFromCart('+item.id+')">✕</button>'+
+      '</div>';
+    }).join('');
+    footerEl.style.display = 'block';
+    var total = cart.reduce(function(s,i){return s+i.price;},0);
+    document.getElementById('cartTotal').textContent = '$' + total.toFixed(2);
+  }
+}
+
+function toggleCart() {
+  document.getElementById('cartDrawer').classList.toggle('open');
+  document.getElementById('cartOverlay').classList.toggle('open');
+}
+
+function checkout(method) {
+  var total = cart.reduce(function(s,i){return s+i.price;},0);
+  if (method === 'venmo') {
+    alert('Redirecting to Venmo — Total: $' + total.toFixed(2) + '\n\nPlease include your order in the Venmo note!');
+  } else if (method === 'zelle') {
+    alert('Send $' + total.toFixed(2) + ' via Zelle.\n\nInclude your order details in the memo!');
+  } else if (method === 'stripe') {
+    alert('Redirecting to Stripe checkout — Total: $' + total.toFixed(2) + '\n\nStripe integration coming soon!');
+  }
+}
+
+// ===== FILTERS =====
+var filterBtns = document.querySelectorAll('.filter-btn');
+for (var i=0; i<filterBtns.length; i++) {
+  filterBtns[i].addEventListener('click', function() {
+    var allBtns = document.querySelectorAll('.filter-btn');
+    for (var j=0; j<allBtns.length; j++) allBtns[j].classList.remove('active');
+    this.classList.add('active');
+    renderProducts(this.getAttribute('data-cat'));
+  });
+}
+
+// ===== FAQ ACCORDION =====
+var faqQs = document.querySelectorAll('.faq-q');
+for (var i=0; i<faqQs.length; i++) {
+  faqQs[i].addEventListener('click', function() {
+    this.parentElement.classList.toggle('open');
+  });
+}
+
+// ===== NAV SCROLL =====
+window.addEventListener('scroll', function() {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ===== REVEAL ANIMATION =====
+var revealObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+// ===== INIT =====
+initCarousel();
+  renderProducts();
+renderGallery();
+var revealEls = document.querySelectorAll('.section-title, .product-card, .size-card, .gallery-item, .tag-save, .faq-item, .about-grid');
+for (var i=0; i<revealEls.length; i++) {
+  revealEls[i].classList.add('reveal');
+  revealObserver.observe(revealEls[i]);
+}
 </script>
 </body>
 </html>
