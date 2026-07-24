@@ -4,102 +4,120 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kandy K Shop — Dulce, Picante & Hecho en LA</title>
-<meta name="description" content="Mexican-inspired chamoy candy made fresh in Los Angeles. Sweet, spicy, tangy and packed with personality.">
+<meta name="description" content="Kandy K Shop — Mexican-inspired chamoy kandy made fresh in Los Angeles. Sweet, spicy, tangy and packed with personality.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Bungee&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--mango:#FFB627;--mango-light:#FFD470;--watermelon:#FF4D6D;--fuchsia:#E63988;--lime:#7ED321;--turquoise:#2EC4B6;--black:#0a0a0a;--black-soft:#1a1a1a;--black-card:#161616;--gold:#F0B90B;--white:#fff;--shadow:0 4px 20px rgba(0,0,0,.4);--shadow-lg:0 8px 40px rgba(0,0,0,.5)}
+:root{--pink:#FF4D6D;--fuchsia:#E63988;--pink-light:#FF8FAB;--pink-soft:#FFC2D4;--white:#fff;--black:#0a0a0a;--black-soft:#1a1a1a;--black-card:#161616;--rose-gold:#B76E79;--shadow:0 4px 20px rgba(0,0,0,.4);--shadow-lg:0 8px 40px rgba(0,0,0,.5)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:hidden}
-body{font-family:'Quicksand',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;line-height:1.6}
-h1,h2,h3,h4{font-family:'Fredoka',sans-serif}
+body{font-family:'Montserrat',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;line-height:1.6}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif}
+
+/* ANNOUNCEMENT BAR */
 .announce{background:var(--fuchsia);height:44px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;z-index:100}
-.announce-text{color:#fff;font-family:'Fredoka',sans-serif;font-size:.82rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-shadow:0 1px 3px rgba(0,0,0,.3);white-space:nowrap;display:inline-block;animation:scrollText 22s linear infinite}
+.announce-text{color:#fff;font-size:.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;white-space:nowrap;display:inline-block;animation:scrollText 22s linear infinite}
 @keyframes scrollText{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
 .announce:hover .announce-text{animation-play-state:paused}
-.nav{background:var(--black);border-bottom:2px solid rgba(230,57,136,.3);position:sticky;top:0;z-index:90;padding:14px 20px}
+
+/* NAVIGATION */
+.nav{background:var(--black);border-bottom:1px solid rgba(230,57,136,.25);position:sticky;top:0;z-index:90;padding:16px 20px}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .nav-links-left,.nav-links-right{display:flex;gap:22px;align-items:center;flex:1}
 .nav-links-right{justify-content:flex-end}
-.nav-link{text-decoration:none;color:var(--white);font-weight:600;font-size:.82rem;letter-spacing:1px;text-transform:uppercase;transition:color .2s;position:relative}
-.nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--mango);transition:width .3s}
-.nav-link:hover{color:var(--mango)}
-.nav-link:hover::after{width:100%}
-.nav-logo-center img{max-height:60px;width:auto;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(230,57,136,.4))}
+.nav-link{text-decoration:none;color:var(--white);font-weight:500;font-size:.8rem;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}
+.nav-link:hover{color:var(--pink)}
+.nav-logo-center img{max-height:72px;width:auto;filter:drop-shadow(0 2px 12px rgba(230,57,136,.5))}
 .cart-btn{position:relative;background:var(--fuchsia);border:none;width:44px;height:44px;border-radius:50%;cursor:pointer;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(230,57,136,.4);transition:all .3s;flex-shrink:0}
 .cart-btn:hover{transform:scale(1.08)}
-.cart-badge{position:absolute;top:-4px;right:-4px;background:var(--mango);color:var(--black);font-size:.65rem;font-weight:700;min-width:18px;height:18px;border-radius:9px;display:flex;align-items:center;justify-content:center;padding:0 4px;border:2px solid var(--black)}
+.cart-badge{position:absolute;top:-4px;right:-4px;background:var(--pink-light);color:var(--black);font-size:.65rem;font-weight:700;min-width:18px;height:18px;border-radius:9px;display:flex;align-items:center;justify-content:center;padding:0 4px;border:2px solid var(--black)}
 .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;color:#fff}
-@media(max-width:768px){.nav-links-left,.nav-links-right{display:none}.nav-links-left.mobile-open,.nav-links-right.mobile-open{display:flex;flex-direction:column;position:absolute;top:80px;left:0;right:0;background:var(--black-soft);padding:16px;box-shadow:var(--shadow-lg);z-index:95;border-bottom:2px solid var(--fuchsia)}.mobile-menu-btn{display:block}.nav-logo-center img{max-height:48px}}
-.hero{background:var(--black);padding:80px 20px 100px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-30%;right:-15%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(230,57,136,.15),transparent 70%)}
-.hero::after{content:'';position:absolute;bottom:-30%;left:-15%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(255,182,39,.12),transparent 70%)}
+@media(max-width:768px){.nav-links-left,.nav-links-right{display:none}.nav-links-left.mobile-open,.nav-links-right.mobile-open{display:flex;flex-direction:column;position:absolute;top:90px;left:0;right:0;background:var(--black-soft);padding:16px;box-shadow:var(--shadow-lg);z-index:95;border-bottom:2px solid var(--fuchsia)}.mobile-menu-btn{display:block}.nav-logo-center img{max-height:56px}}
+
+/* HERO */
+.hero{background:var(--black);padding:60px 20px 80px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-30%;right:-15%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(230,57,136,.12),transparent 70%)}
+.hero::after{content:'';position:absolute;bottom:-30%;left:-15%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(255,77,109,.08),transparent 70%)}
+.hero-logo-big{max-width:380px;width:100%;margin:0 auto 30px;display:block;filter:drop-shadow(0 8px 40px rgba(230,57,136,.4))}
 .hero-content{position:relative;z-index:2;max-width:760px;margin:0 auto}
-.hero h1{font-size:clamp(2.8rem,7vw,5.5rem);color:var(--white);line-height:1.05;margin-bottom:8px;text-shadow:0 4px 30px rgba(0,0,0,.5);font-weight:700}
-.hero h1 .accent{color:var(--mango);display:block;font-family:'Bungee',sans-serif;font-size:clamp(2.2rem,5.5vw,4rem);line-height:1.1}
-.hero h1 .accent-pink{color:var(--fuchsia);display:block;font-family:'Bungee',sans-serif;font-size:clamp(2.2rem,5.5vw,4rem);line-height:1.1}
-.hero .spanglish{font-size:clamp(1rem,2.5vw,1.3rem);color:var(--mango);font-weight:500;letter-spacing:1px;margin-bottom:20px;text-transform:uppercase;display:block}
-.hero p{font-size:clamp(1rem,2vw,1.15rem);color:rgba(255,255,255,.8);margin-bottom:36px;line-height:1.7}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);color:var(--white);line-height:1.1;margin-bottom:8px;font-weight:700;letter-spacing:-1px}
+.hero h1 .accent{color:var(--pink);display:block;font-weight:800}
+.hero .spanglish{font-size:clamp(.9rem,2vw,1.1rem);color:var(--pink-light);font-weight:500;letter-spacing:2px;margin-bottom:20px;text-transform:uppercase;display:block}
+.hero p{font-size:clamp(.95rem,1.8vw,1.1rem);color:rgba(255,255,255,.7);margin-bottom:36px;line-height:1.8}
 .hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 36px;border-radius:50px;font-family:'Fredoka',sans-serif;font-size:.95rem;font-weight:600;text-decoration:none;cursor:pointer;border:none;transition:all .3s;letter-spacing:.5px}
-.btn-primary{background:var(--mango);color:var(--black);box-shadow:0 6px 24px rgba(255,182,39,.4)}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(255,182,39,.6)}
-.btn-secondary{background:transparent;color:var(--white);border:2px solid var(--fuchsia)}
-.btn-secondary:hover{background:var(--fuchsia);transform:translateY(-3px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 36px;border-radius:50px;font-size:.9rem;font-weight:600;text-decoration:none;cursor:pointer;border:none;transition:all .3s;letter-spacing:.5px}
+.btn-primary{background:var(--fuchsia);color:#fff;box-shadow:0 6px 24px rgba(230,57,136,.3)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(230,57,136,.5)}
+.btn-secondary{background:transparent;color:var(--white);border:2px solid var(--pink)}
+.btn-secondary:hover{background:var(--pink);transform:translateY(-3px)}
+
+/* BENEFITS */
 .benefits{background:var(--black-soft);padding:28px 20px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.06)}
 .benefit{display:flex;align-items:center;gap:12px}
 .benefit-icon{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem}
-.benefit-text{color:rgba(255,255,255,.85);font-size:.85rem;font-weight:600}
+.benefit-text{color:rgba(255,255,255,.85);font-size:.82rem;font-weight:600}
+
+/* SECTIONS */
 .section{padding:70px 20px;position:relative}
 .section-header{text-align:center;margin-bottom:48px}
-.section-header h2{font-size:clamp(2rem,5vw,3.2rem);color:var(--white);margin-bottom:10px;line-height:1.15}
-.section-header .spanglish-tag{color:var(--fuchsia);font-weight:500;font-size:.9rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
-.section-header p{color:rgba(255,255,255,.6);font-size:1.05rem;max-width:500px;margin:0 auto}
+.section-header h2{font-size:clamp(1.8rem,4.5vw,2.8rem);color:var(--white);margin-bottom:10px;line-height:1.2;font-weight:700}
+.section-header .spanglish-tag{color:var(--pink);font-weight:500;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}
+.section-header p{color:rgba(255,255,255,.55);font-size:1rem;max-width:500px;margin:0 auto}
+
+/* PRODUCTS */
 .products-section{background:var(--black)}
 .product-filters{display:flex;gap:12px;justify-content:center;margin-bottom:36px;flex-wrap:wrap}
-.filter-btn{padding:10px 24px;border-radius:50px;background:var(--black-card);border:2px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);font-family:'Fredoka',sans-serif;font-weight:600;font-size:.85rem;cursor:pointer;transition:all .3s}
+.filter-btn{padding:10px 24px;border-radius:50px;background:var(--black-card);border:2px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);font-weight:600;font-size:.82rem;cursor:pointer;transition:all .3s}
 .filter-btn.active{background:var(--fuchsia);color:#fff;border-color:var(--fuchsia)}
-.filter-btn:hover{border-color:var(--fuchsia);color:var(--white)}
+.filter-btn:hover{border-color:var(--pink);color:var(--white)}
 .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;max-width:1100px;margin:0 auto}
 .product-card{background:var(--black-card);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);transition:all .3s;cursor:pointer;position:relative;border:1px solid rgba(255,255,255,.06)}
 .product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg),0 0 0 1px var(--fuchsia)}
 .product-img-wrap{aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:24px;position:relative;overflow:hidden}
 .product-img-wrap img{max-width:100%;max-height:100%;object-fit:contain;border-radius:12px;transition:transform .3s}
 .product-card:hover .product-img-wrap img{transform:scale(1.08)}
-.product-badge{position:absolute;top:12px;right:12px;background:var(--mango);color:var(--black);font-size:.62rem;font-weight:700;text-transform:uppercase;padding:5px 14px;border-radius:20px;letter-spacing:1px;z-index:2}
+.product-badge{position:absolute;top:12px;right:12px;background:var(--pink);color:#fff;font-size:.6rem;font-weight:700;text-transform:uppercase;padding:5px 14px;border-radius:20px;letter-spacing:1px;z-index:2}
 .product-info{padding:20px;border-top:1px solid rgba(255,255,255,.06)}
-.product-name{font-size:1.15rem;margin-bottom:4px;color:var(--white)}
-.product-caption{color:rgba(255,255,255,.5);font-size:.82rem;margin-bottom:10px}
-.product-price{font-weight:600;color:var(--mango);font-size:.95rem}
-.product-card:nth-child(8n+1) .product-img-wrap{background:linear-gradient(135deg,rgba(230,57,136,.12),rgba(255,77,109,.08))}
-.product-card:nth-child(8n+2) .product-img-wrap{background:linear-gradient(135deg,rgba(255,182,39,.12),rgba(255,212,112,.08))}
-.product-card:nth-child(8n+3) .product-img-wrap{background:linear-gradient(135deg,rgba(46,196,182,.12),rgba(126,211,33,.08))}
-.product-card:nth-child(8n+4) .product-img-wrap{background:linear-gradient(135deg,rgba(255,77,109,.12),rgba(230,57,136,.08))}
-.product-card:nth-child(8n+5) .product-img-wrap{background:linear-gradient(135deg,rgba(126,211,33,.12),rgba(46,196,182,.08))}
-.product-card:nth-child(8n+6) .product-img-wrap{background:linear-gradient(135deg,rgba(255,182,39,.12),rgba(230,57,136,.08))}
-.product-card:nth-child(8n+7) .product-img-wrap{background:linear-gradient(135deg,rgba(46,196,182,.12),rgba(255,182,39,.08))}
-.product-card:nth-child(8n) .product-img-wrap{background:linear-gradient(135deg,rgba(230,57,136,.12),rgba(126,211,33,.08))}
+.product-name{font-size:1.1rem;margin-bottom:4px;color:var(--white);font-weight:600}
+.product-caption{color:rgba(255,255,255,.45);font-size:.8rem;margin-bottom:10px}
+.product-price{font-weight:700;color:var(--pink-light);font-size:.92rem}
+.product-card:nth-child(6n+1) .product-img-wrap{background:linear-gradient(135deg,rgba(230,57,136,.1),rgba(255,77,109,.06))}
+.product-card:nth-child(6n+2) .product-img-wrap{background:linear-gradient(135deg,rgba(255,143,171,.1),rgba(230,57,136,.06))}
+.product-card:nth-child(6n+3) .product-img-wrap{background:linear-gradient(135deg,rgba(183,110,121,.1),rgba(255,194,212,.06))}
+.product-card:nth-child(6n+4) .product-img-wrap{background:linear-gradient(135deg,rgba(255,77,109,.1),rgba(255,143,171,.06))}
+.product-card:nth-child(6n+5) .product-img-wrap{background:linear-gradient(135deg,rgba(230,57,136,.1),rgba(183,110,121,.06))}
+.product-card:nth-child(6n) .product-img-wrap{background:linear-gradient(135deg,rgba(255,194,212,.1),rgba(230,57,136,.06))}
+
+/* BUNDLES */
 .bundle-section{background:var(--black-soft);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
 .bundle-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:900px;margin:0 auto}
-.bundle-card{background:linear-gradient(135deg,rgba(255,182,39,.15),rgba(230,57,136,.1));border:2px solid rgba(255,182,39,.3);border-radius:24px;padding:40px;text-align:center}
-.bundle-card h3{font-size:1.6rem;color:var(--mango);margin-bottom:12px}
-.bundle-card p{color:rgba(255,255,255,.7);margin-bottom:20px;font-size:.95rem}
-.bundle-card .price{font-family:'Bungee',sans-serif;font-size:2rem;color:var(--white);margin-bottom:20px}
-.dip-card{background:linear-gradient(135deg,rgba(230,57,136,.15),rgba(46,196,182,.1));border:2px solid rgba(230,57,136,.3);border-radius:24px;padding:40px;text-align:center}
-.dip-card h3{font-size:1.6rem;color:var(--fuchsia);margin-bottom:12px}
-.dip-card p{color:rgba(255,255,255,.7);margin-bottom:20px;font-size:.95rem}
-.dip-card .price{font-family:'Bungee',sans-serif;font-size:2rem;color:var(--white);margin-bottom:20px}
+.bundle-card{background:linear-gradient(135deg,rgba(230,57,136,.12),rgba(255,77,109,.06));border:2px solid rgba(230,57,136,.25);border-radius:24px;padding:40px;text-align:center}
+.bundle-card h3{font-size:1.5rem;color:var(--pink-light);margin-bottom:12px}
+.bundle-card p{color:rgba(255,255,255,.65);margin-bottom:20px;font-size:.92rem}
+.bundle-card .price{font-weight:800;font-size:2rem;color:var(--white);margin-bottom:20px}
+.dip-card{background:linear-gradient(135deg,rgba(255,77,109,.12),rgba(255,143,171,.06));border:2px solid rgba(255,77,109,.25);border-radius:24px;padding:40px;text-align:center}
+.dip-card h3{font-size:1.5rem;color:var(--pink);margin-bottom:12px}
+.dip-card p{color:rgba(255,255,255,.65);margin-bottom:20px;font-size:.92rem}
+.dip-card .price{font-weight:800;font-size:2rem;color:var(--white);margin-bottom:20px}
 @media(max-width:768px){.bundle-grid{grid-template-columns:1fr;gap:20px}}
+
+/* OWNER SECTION */
 .owner-section{background:var(--black);padding:70px 20px;position:relative;overflow:hidden}
-.owner-section::before{content:'';position:absolute;top:-20%;right:-10%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(230,57,136,.1),transparent 70%)}
-.owner-grid{display:grid;grid-template-columns:300px 1fr;gap:50px;align-items:center;max-width:1000px;margin:0 auto;position:relative;z-index:1}
-.owner-img{width:100%;aspect-ratio:1;border-radius:24px;overflow:hidden;border:3px solid var(--mango);box-shadow:var(--shadow-lg)}
+.owner-section::before{content:'';position:absolute;top:-20%;right:-10%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(230,57,136,.08),transparent 70%)}
+.owner-grid{display:grid;grid-template-columns:320px 1fr;gap:50px;align-items:center;max-width:1000px;margin:0 auto;position:relative;z-index:1}
+.owner-img{width:100%;aspect-ratio:1;border-radius:24px;overflow:hidden;border:3px solid var(--fuchsia);box-shadow:var(--shadow-lg),0 0 40px rgba(230,57,136,.2)}
 .owner-img img{width:100%;height:100%;object-fit:cover}
-.owner-text .owner-tag{color:var(--fuchsia);font-weight:500;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;display:block}
-.owner-text h2{font-size:clamp(1.8rem,4vw,2.6rem);color:var(--white);margin-bottom:16px}
-.owner-text p{color:rgba(255,255,255,.75);font-size:.98rem;line-height:1.85;margin-bottom:16px}
-.owner-text .signature{font-family:'Bungee',sans-serif;color:var(--mango);font-size:1.1rem;margin-top:16px}
-@media(max-width:768px){.owner-grid{grid-template-columns:1fr;gap:30px;text-align:center}.owner-img{max-width:260px;margin:0 auto}}
+.owner-text .owner-tag{color:var(--pink);font-weight:500;font-size:.82rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;display:block}
+.owner-text h2{font-size:clamp(1.8rem,4vw,2.6rem);color:var(--white);margin-bottom:20px}
+.owner-text p{color:rgba(255,255,255,.72);font-size:.95rem;line-height:1.9;margin-bottom:16px}
+.owner-text .highlight{color:var(--pink-light);font-weight:600}
+.owner-text .signature{font-weight:700;color:var(--pink-light);font-size:1rem;margin-top:16px}
+.owner-text .personal-note{border-left:3px solid var(--fuchsia);padding:16px 20px;margin-top:24px;background:rgba(230,57,136,.05);border-radius:0 12px 12px 0}
+.owner-text .personal-note p{margin-bottom:0;font-style:italic;color:rgba(255,255,255,.65);font-size:.88rem;line-height:1.8}
+.owner-text .personal-note .signed{font-style:normal;color:var(--pink);font-weight:600;margin-top:10px;display:block}
+@media(max-width:768px){.owner-grid{grid-template-columns:1fr;gap:30px;text-align:center}.owner-img{max-width:260px;margin:0 auto}.owner-text .personal-note{text-align:left}}
+
+/* CAROUSEL */
 .carousel-section{background:var(--black-soft);border-top:1px solid rgba(255,255,255,.06)}
 .carousel-wrap{max-width:100%;overflow:hidden;position:relative;margin:0 -20px}
 .carousel-track{display:flex;gap:16px;animation:carouselScroll 40s linear infinite;width:max-content}
@@ -108,111 +126,68 @@ h1,h2,h3,h4{font-family:'Fredoka',sans-serif}
 .carousel-item{width:280px;height:280px;border-radius:20px;overflow:hidden;flex-shrink:0;position:relative;background:var(--black-card)}
 .carousel-item img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
 .carousel-item:hover img{transform:scale(1.05)}
-.carousel-item::after{content:attr(data-label);position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(transparent,rgba(0,0,0,.85));color:#fff;font-weight:600;font-size:.85rem}
+.carousel-item::after{content:attr(data-label);position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(transparent,rgba(0,0,0,.85));color:#fff;font-weight:600;font-size:.82rem}
+
+/* REVIEWS CAROUSEL (same speed as main carousel) */
 .reviews-section{background:var(--black)}
-.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:1100px;margin:0 auto}
-.review-bubble{background:var(--black-card);border-radius:24px;padding:32px;position:relative;border:2px solid rgba(255,255,255,.06);transition:all .3s}
-.review-bubble:hover{transform:translateY(-4px);border-color:rgba(230,57,136,.3)}
-.review-bubble::before{content:'';position:absolute;bottom:-2px;left:40px;width:20px;height:20px;background:var(--black-card);border-right:2px solid rgba(255,255,255,.06);border-bottom:2px solid rgba(255,255,255,.06);transform:rotate(45deg)}
-.review-bubble:nth-child(4n+1){border-color:rgba(230,57,136,.15)}
-.review-bubble:nth-child(4n+2){border-color:rgba(255,182,39,.15)}
-.review-bubble:nth-child(4n+3){border-color:rgba(46,196,182,.15)}
-.review-bubble:nth-child(4n){border-color:rgba(126,211,33,.15)}
-.review-stars{color:var(--mango);font-size:1.1rem;margin-bottom:12px;letter-spacing:2px}
-.review-text{color:rgba(255,255,255,.85);font-size:1rem;line-height:1.6;margin-bottom:16px;font-weight:500}
-.review-author{color:var(--fuchsia);font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:1px}
-.spin-section{background:linear-gradient(135deg,var(--black-soft) 0%,#0f0a0f 100%);text-align:center;border-top:1px solid rgba(255,255,255,.06)}
-.spin-wheel-container{width:320px;height:320px;margin:0 auto;position:relative}
-.spin-wheel{width:100%;height:100%;border-radius:50%;position:relative;overflow:hidden;transition:transform 4s cubic-bezier(.2,.8,.3,1);box-shadow:0 0 40px rgba(230,57,136,.3),0 0 0 4px var(--fuchsia)}
-.spin-wheel.spinning{transform:rotate(var(--spin-target,0deg))}
-.spin-segment{position:absolute;width:50%;height:50%;top:0;left:0;transform-origin:100% 100%;display:flex;align-items:center;justify-content:flex-start;padding-left:20px}
-.spin-segment-inner{font-weight:700;color:#fff;font-size:.7rem;text-shadow:0 1px 2px rgba(0,0,0,.5);text-align:center;width:100%;transform:rotate(-22.5deg) translateX(-10px)}
-.spin-pointer{position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:20px solid var(--mango);z-index:10;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))}
-.spin-btn{margin-top:24px;padding:16px 40px;background:var(--fuchsia);color:#fff;border:none;border-radius:50px;font-family:'Fredoka',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;transition:all .3s;box-shadow:0 6px 20px rgba(230,57,136,.4)}
-.spin-btn:hover:not(:disabled){transform:translateY(-2px)}
-.spin-btn:disabled{opacity:.5;cursor:not-allowed}
-.spin-result{margin-top:24px;display:none}
-.spin-result.show{display:block;animation:fadeIn .5s}
-.spin-result .prize{font-family:'Bungee',sans-serif;font-size:1.4rem;color:var(--mango);margin-bottom:8px}
-.spin-result .code{background:var(--black-card);border:1px solid var(--fuchsia);border-radius:12px;padding:10px 20px;display:inline-block;font-weight:600;color:var(--white);font-size:1.1rem;cursor:pointer;letter-spacing:2px}
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.footer{background:var(--black);padding:60px 20px 30px;border-top:2px solid rgba(230,57,136,.2)}
-.footer-inner{max-width:1100px;margin:0 auto}
-.footer-logo{text-align:center;margin-bottom:36px}
-.footer-logo img{max-height:60px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(230,57,136,.3))}
-.footer-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:24px;margin-bottom:32px}
-.footer-col h4{color:var(--mango);font-size:.8rem;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
-.footer-col a{display:block;color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;margin-bottom:8px;transition:color .2s}
-.footer-col a:hover{color:var(--fuchsia)}
-.footer-bottom{text-align:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-size:.78rem;color:rgba(255,255,255,.4)}
-.overlay-bg{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s}
-.overlay-bg.open{opacity:1;pointer-events:auto}
-.cart-drawer{position:fixed;top:0;right:0;width:400px;max-width:100%;height:100%;background:var(--black-soft);z-index:210;transform:translateX(100%);transition:transform .3s;display:flex;flex-direction:column;border-left:2px solid rgba(230,57,136,.3)}
-.cart-drawer.open{transform:translateX(0)}
-.cart-header{padding:20px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between}
-.cart-header h3{color:var(--white);font-size:1.2rem}
-.cart-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:1.5rem;cursor:pointer;padding:4px 8px;border-radius:8px}
-.cart-close:hover{color:var(--white);background:rgba(255,255,255,.06)}
-.cart-body{flex:1;overflow-y:auto;padding:16px 20px}
-.cart-empty{color:rgba(255,255,255,.4);text-align:center;padding:40px 20px;font-size:.9rem}
-.cart-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06);align-items:center}
-.cart-item-img{width:56px;height:56px;border-radius:12px;object-fit:cover;background:var(--black-card)}
-.cart-item-info{flex:1}
-.cart-item-name{color:var(--white);font-size:.9rem;font-weight:600}
-.cart-item-size{color:rgba(255,255,255,.4);font-size:.75rem}
-.cart-item-price{color:var(--mango);font-weight:600;font-size:.85rem}
-.cart-item-remove{background:none;border:none;color:rgba(255,255,255,.3);font-size:1.2rem;cursor:pointer;padding:4px 8px;border-radius:6px}
-.cart-item-remove:hover{color:var(--fuchsia);background:rgba(230,57,136,.1)}
-.cart-footer{padding:20px;border-top:1px solid rgba(255,255,255,.08)}
-.shipping-progress{font-size:.78rem;padding:8px 12px;border-radius:8px;margin-bottom:12px;text-align:center}
-.shipping-progress.needs{background:rgba(255,182,39,.1);color:var(--mango)}
-.shipping-progress.unlocked{background:rgba(126,211,33,.1);color:var(--lime)}
-.promo-input-row{display:flex;gap:8px;margin-bottom:12px}
-.promo-input{flex:1;background:var(--black-card);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:10px 14px;border-radius:10px;font-size:.85rem;outline:none}
-.promo-input:focus{border-color:var(--fuchsia)}
-.promo-apply{background:var(--black-card);color:var(--white);border:1px solid rgba(255,255,255,.15);padding:10px 16px;border-radius:10px;cursor:pointer;font-weight:600;font-size:.85rem}
-.promo-apply:hover{border-color:var(--fuchsia);color:var(--fuchsia)}
-.cart-total{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.cart-total span{color:rgba(255,255,255,.6);font-size:.9rem}
-.cart-total .amount{font-weight:700;color:var(--mango);font-size:1.4rem}
-.cart-checkout{width:100%;padding:14px;background:var(--fuchsia);color:#fff;border:none;border-radius:12px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:.95rem;cursor:pointer;margin-bottom:8px}
-.cart-checkout:hover{background:#d63580}
-.cart-venmo{width:100%;padding:12px;background:transparent;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.15);border-radius:12px;font-family:'Fredoka',sans-serif;font-size:.85rem;cursor:pointer}
-.cart-venmo:hover{border-color:var(--turquoise);color:var(--turquoise)}
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);z-index:220;display:none;align-items:center;justify-content:center;padding:20px}
-.modal-overlay.open{display:flex}
-.modal{background:var(--black-soft);border-radius:24px;max-width:440px;width:100%;padding:30px;position:relative;border:1px solid rgba(255,255,255,.1)}
-.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;color:rgba(255,255,255,.5);font-size:1.4rem;cursor:pointer}
-.modal-close:hover{color:var(--white)}
-.modal-img{width:100%;max-height:200px;object-fit:contain;border-radius:16px;margin-bottom:16px;background:var(--black-card)}
-.modal h3{color:var(--white);font-size:1.4rem;margin-bottom:8px}
-.modal-desc{color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:16px;line-height:1.6}
-.size-btns{display:flex;gap:8px;margin-bottom:16px}
-.size-btn{flex:1;padding:12px;background:var(--black-card);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);border-radius:12px;cursor:pointer;font-family:'Fredoka',sans-serif;font-size:.85rem;text-align:center}
-.size-btn.active{background:var(--fuchsia);color:#fff;border-color:var(--fuchsia)}
-.size-btn:hover:not(.active){border-color:var(--fuchsia)}
-.qty-row{display:flex;align-items:center;gap:16px;justify-content:center;margin-bottom:16px}
-.qty-btn{width:36px;height:36px;border-radius:50%;background:var(--black-card);border:1px solid rgba(255,255,255,.1);color:var(--white);font-size:1.1rem;cursor:pointer}
-.qty-btn:hover{border-color:var(--fuchsia)}
-.qty-val{color:var(--white);font-weight:600;font-size:1.1rem}
-.modal-total{text-align:center;margin-bottom:16px;color:rgba(255,255,255,.6);font-size:.9rem}
-.modal-total .price{color:var(--mango);font-weight:700;font-size:1.3rem}
+.reviews-carousel-wrap{max-width:100%;overflow:hidden;position:relative;margin:0 -20px}
+.reviews-track{display:flex;gap:20px;animation:carouselScroll 40s linear infinite;width:max-content}
+.reviews-carousel-wrap:hover .reviews-track{animation-play-state:paused}
+.review-card{width:340px;flex-shrink:0;background:var(--black-card);border-radius:20px;padding:28px;border:2px solid rgba(255,255,255,.06);transition:all .3s}
+.review-card:hover{border-color:rgba(230,57,136,.25)}
+.review-card:nth-child(4n+1){border-color:rgba(230,57,136,.12)}
+.review-card:nth-child(4n+2){border-color:rgba(255,77,109,.12)}
+.review-card:nth-child(4n+3){border-color:rgba(255,143,171,.12)}
+.review-card:nth-child(4n){border-color:rgba(183,110,121,.12)}
+.review-stars{color:var(--pink-light);font-size:1rem;margin-bottom:12px;letter-spacing:2px}
+.review-text{color:rgba(255,255,255,.85);font-size:.92rem;line-height:1.6;margin-bottom:16px;font-weight:500}
+.review-author{color:var(--pink);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:1px}
+
+/* RAFFLE */
+.raffle-section{background:linear-gradient(135deg,var(--black-soft) 0%,#0f0a0f 100%);border-top:1px solid rgba(255,255,255,.06);text-align:center}
+.raffle-container{display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:center;max-width:1000px;margin:0 auto}
+@media(max-width:860px){.raffle-container{grid-template-columns:1fr;gap:40px}}
+.wheel-wrap{display:flex;flex-direction:column;align-items:center;position:relative}
+.wheel-stage{position:relative;width:340px;height:380px;display:flex;align-items:center;justify-content:center}
+.wheel-base{position:absolute;bottom:0;width:120px;height:24px;background:linear-gradient(135deg,var(--fuchsia),var(--pink));border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.5);z-index:0}
+.wheel-svg{width:320px;height:320px;position:relative;z-index:1;transition:transform 4s cubic-bezier(.17,.67,.32,1)}
+.wheel-svg.spinning{animation:spinWheel 4s cubic-bezier(.17,.67,.32,1) forwards}
+@keyframes spinWheel{0%{transform:rotate(0deg)}100%{transform:rotate(1440deg)}}
+.wheel-center-logo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:80px;height:80px;border-radius:50%;overflow:hidden;z-index:5;border:3px solid var(--fuchsia);box-shadow:0 0 20px rgba(230,57,136,.4);background:var(--black)}
+.wheel-center-logo img{width:100%;height:100%;object-fit:cover}
+.wheel-pointer{position:absolute;top:-8px;left:50%;transform:translateX(-50%);z-index:10;filter:drop-shadow(0 4px 8px rgba(0,0,0,.5))}
+.raffle-info{text-align:left}
+.raffle-info h3{font-size:1.8rem;color:var(--white);margin-bottom:12px}
+.raffle-prize{color:var(--pink-light);font-size:1.05rem;font-weight:600;margin-bottom:8px}
+.raffle-desc{color:rgba(255,255,255,.6);font-size:.88rem;margin-bottom:24px;line-height:1.8}
+.raffle-stats{display:flex;gap:24px;margin-bottom:28px}
+.raffle-stat .num{font-weight:800;font-size:1.8rem;color:var(--pink-light)}
+.raffle-stat .lbl{font-size:.62rem;color:rgba(255,255,255,.4);letter-spacing:1.5px;text-transform:uppercase}
+.raffle-form{display:flex;flex-direction:column;gap:12px;max-width:360px}
+.raffle-form input{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 18px;color:var(--white);font-size:.86rem;font-family:'Montserrat',sans-serif;transition:all .3s}
+.raffle-form input:focus{outline:none;border-color:var(--fuchsia);box-shadow:0 0 0 3px rgba(230,57,136,.1)}
+.raffle-form input::placeholder{color:rgba(255,255,255,.3)}
+@media(max-width:860px){.raffle-info{text-align:center}.raffle-form{margin:0 auto}}
+
+/* BIRTHDAY */
 .birthday-kandy{position:relative;background:linear-gradient(135deg,#0a0a0a 0%,#1a0a1e 40%,#0a0a0a 100%);padding:100px 0;overflow:hidden}
-.birthday-kandy::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(255,105,180,.08),transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(255,215,0,.06),transparent 60%);pointer-events:none}
-.bday-balloon{position:absolute;font-size:2rem;animation:floatBalloon 6s ease-in-out infinite;opacity:.7}
+.birthday-kandy::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(255,105,180,.06),transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(255,143,171,.04),transparent 60%);pointer-events:none}
+.bday-balloon{position:absolute;font-size:2rem;animation:floatBalloon 6s ease-in-out infinite;opacity:.5}
 @keyframes floatBalloon{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-20px) rotate(5deg)}}
 .bday-confetti-k{position:absolute;width:8px;height:8px;border-radius:2px;animation:confettiFall 4s linear infinite}
 @keyframes confettiFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
 .birthday-content-k{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1100px;margin:0 auto;padding:0 40px;position:relative;z-index:1}
 .bday-text-k{color:#fff}
-.bday-badge-k{display:inline-block;background:linear-gradient(135deg,#ff69b4,#ff1493);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:8px 20px;border-radius:50px;margin-bottom:20px}
-.bday-title-k{font-size:clamp(2rem,5vw,3.2rem);line-height:1.2;margin-bottom:12px;color:#fff}
-.bday-title-k span{display:block;background:linear-gradient(135deg,#ffd700,#ffb700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.bday-sub-k{font-size:1rem;color:#ff69b4;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:24px}
-.bday-message-k{font-size:.92rem;line-height:1.85;color:rgba(255,255,255,.82);margin-bottom:20px}
-.bday-sig-k{font-style:italic;color:#ffd700;font-size:.88rem;line-height:1.7}
-.bday-video-k{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 0 3px rgba(255,105,180,.3);background:#0d0010;aspect-ratio:4/5;min-height:475px;max-width:380px;margin:0 auto}
-.bday-play-badge-k{position:absolute;top:14px;left:14px;background:rgba(255,105,180,.9);color:#fff;font-size:.6rem;font-weight:700;letter-spacing:2px;padding:5px 12px;border-radius:20px;z-index:3;text-transform:uppercase}
+.bday-badge-k{display:inline-block;background:linear-gradient(135deg,#ff69b4,#E63988);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:8px 20px;border-radius:50px;margin-bottom:20px}
+.bday-title-k{font-size:clamp(2rem,5vw,3rem);line-height:1.2;margin-bottom:12px;color:#fff;font-weight:700}
+.bday-title-k span{display:block;color:#FF8FAB}
+.bday-sub-k{font-size:.95rem;color:#ff69b4;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:24px}
+.bday-message-k{font-size:.9rem;line-height:1.9;color:rgba(255,255,255,.8);margin-bottom:20px}
+.bday-sig-k{font-style:italic;color:#FF8FAB;font-size:.85rem;line-height:1.7}
+.bday-extra-k{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08)}
+.bday-extra-k p{font-size:.85rem;color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:12px}
+.bday-video-k{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 0 3px rgba(230,57,136,.3);background:#0d0010;aspect-ratio:4/5;min-height:475px;max-width:380px;margin:0 auto}
+.bday-play-badge-k{position:absolute;top:14px;left:14px;background:rgba(230,57,136,.9);color:#fff;font-size:.58rem;font-weight:700;letter-spacing:2px;padding:5px 12px;border-radius:20px;z-index:3;text-transform:uppercase}
 .bday-slides-k{position:relative;width:100%;height:100%}
 .bday-slide-k{position:absolute;inset:0;opacity:0;transition:opacity .8s ease}
 .bday-slide-k.active{opacity:1}
@@ -221,42 +196,114 @@ h1,h2,h3,h4{font-family:'Fredoka',sans-serif}
 .bday-dots-k span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.4);transition:background .3s}
 .bday-dots-k span.on{background:#ff69b4}
 @media(max-width:768px){.birthday-content-k{grid-template-columns:1fr;gap:36px;padding:0 20px}.bday-video-k{max-width:300px}}
+
+/* FOOTER */
+.footer{background:var(--black);padding:60px 20px 30px;border-top:1px solid rgba(230,57,136,.15)}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-logo{text-align:center;margin-bottom:36px}
+.footer-logo img{max-height:72px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(230,57,136,.3))}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:24px;margin-bottom:32px}
+.footer-col h4{color:var(--pink-light);font-size:.78rem;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
+.footer-col a{display:block;color:rgba(255,255,255,.45);text-decoration:none;font-size:.8rem;margin-bottom:8px;transition:color .2s}
+.footer-col a:hover{color:var(--pink)}
+.footer-bottom{text-align:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);font-size:.76rem;color:rgba(255,255,255,.35)}
+
+/* CART */
+.overlay-bg{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s}
+.overlay-bg.open{opacity:1;pointer-events:auto}
+.cart-drawer{position:fixed;top:0;right:0;width:400px;max-width:100%;height:100%;background:var(--black-soft);z-index:210;transform:translateX(100%);transition:transform .3s;display:flex;flex-direction:column;border-left:2px solid rgba(230,57,136,.3)}
+.cart-drawer.open{transform:translateX(0)}
+.cart-header{padding:20px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between}
+.cart-header h3{color:var(--white);font-size:1.15rem}
+.cart-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:1.5rem;cursor:pointer;padding:4px 8px;border-radius:8px}
+.cart-close:hover{color:var(--white);background:rgba(255,255,255,.06)}
+.cart-body{flex:1;overflow-y:auto;padding:16px 20px}
+.cart-empty{color:rgba(255,255,255,.35);text-align:center;padding:40px 20px;font-size:.88rem}
+.cart-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06);align-items:center}
+.cart-item-img{width:56px;height:56px;border-radius:12px;object-fit:cover;background:var(--black-card)}
+.cart-item-info{flex:1}
+.cart-item-name{color:var(--white);font-size:.88rem;font-weight:600}
+.cart-item-size{color:rgba(255,255,255,.35);font-size:.74rem}
+.cart-item-price{color:var(--pink-light);font-weight:600;font-size:.82rem}
+.cart-item-remove{background:none;border:none;color:rgba(255,255,255,.3);font-size:1.2rem;cursor:pointer;padding:4px 8px;border-radius:6px}
+.cart-item-remove:hover{color:var(--fuchsia);background:rgba(230,57,136,.1)}
+.cart-footer{padding:20px;border-top:1px solid rgba(255,255,255,.08)}
+.shipping-progress{font-size:.76rem;padding:8px 12px;border-radius:8px;margin-bottom:12px;text-align:center}
+.shipping-progress.needs{background:rgba(230,57,136,.08);color:var(--pink-light)}
+.shipping-progress.unlocked{background:rgba(255,143,171,.1);color:var(--pink-light)}
+.promo-input-row{display:flex;gap:8px;margin-bottom:12px}
+.promo-input{flex:1;background:var(--black-card);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:10px 14px;border-radius:10px;font-size:.82rem;outline:none}
+.promo-input:focus{border-color:var(--fuchsia)}
+.promo-apply{background:var(--black-card);color:var(--white);border:1px solid rgba(255,255,255,.15);padding:10px 16px;border-radius:10px;cursor:pointer;font-weight:600;font-size:.82rem}
+.promo-apply:hover{border-color:var(--fuchsia);color:var(--fuchsia)}
+.cart-total{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.cart-total span{color:rgba(255,255,255,.55);font-size:.88rem}
+.cart-total .amount{font-weight:700;color:var(--pink-light);font-size:1.3rem}
+.cart-checkout{width:100%;padding:14px;background:var(--fuchsia);color:#fff;border:none;border-radius:12px;font-weight:600;font-size:.92rem;cursor:pointer;margin-bottom:8px;transition:all .2s}
+.cart-checkout:hover{background:#d63580}
+.cart-stripe{width:100%;padding:14px;background:var(--white);color:var(--black);border:none;border-radius:12px;font-weight:700;font-size:.88rem;cursor:pointer;margin-bottom:8px;transition:all .2s}
+.cart-stripe:hover{background:#f0f0f0}
+.cart-venmo{width:100%;padding:12px;background:transparent;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.15);border-radius:12px;font-size:.82rem;cursor:pointer}
+.cart-venmo:hover{border-color:var(--pink);color:var(--pink)}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);z-index:220;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--black-soft);border-radius:24px;max-width:440px;width:100%;padding:30px;position:relative;border:1px solid rgba(255,255,255,.1)}
+.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;color:rgba(255,255,255,.5);font-size:1.4rem;cursor:pointer}
+.modal-close:hover{color:var(--white)}
+.modal-img{width:100%;max-height:200px;object-fit:contain;border-radius:16px;margin-bottom:16px;background:var(--black-card)}
+.modal h3{color:var(--white);font-size:1.35rem;margin-bottom:8px}
+.modal-desc{color:rgba(255,255,255,.55);font-size:.88rem;margin-bottom:16px;line-height:1.6}
+.size-btns{display:flex;gap:8px;margin-bottom:16px}
+.size-btn{flex:1;padding:12px;background:var(--black-card);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);border-radius:12px;cursor:pointer;font-size:.82rem;text-align:center;transition:all .2s}
+.size-btn.active{background:var(--fuchsia);color:#fff;border-color:var(--fuchsia)}
+.size-btn:hover:not(.active){border-color:var(--fuchsia)}
+.qty-row{display:flex;align-items:center;gap:16px;justify-content:center;margin-bottom:16px}
+.qty-btn{width:36px;height:36px;border-radius:50%;background:var(--black-card);border:1px solid rgba(255,255,255,.1);color:var(--white);font-size:1.1rem;cursor:pointer}
+.qty-btn:hover{border-color:var(--fuchsia)}
+.qty-val{color:var(--white);font-weight:600;font-size:1.1rem}
+.modal-total{text-align:center;margin-bottom:16px;color:rgba(255,255,255,.55);font-size:.88rem}
+.modal-total .price{color:var(--pink-light);font-weight:700;font-size:1.25rem}
 </style>
 </head>
 <body>
 
 <!-- ANNOUNCEMENT BAR -->
-<div class="announce"><span class="announce-text">CANDY WILL NEVER BE THE SAME ✦ ENVÍO GRATIS EN ÓRDENES DE $50+ ✦ BUILD YOUR OWN BUNDLE BOX ✦ MANGO RIM DIP NOW AVAILABLE ✦ DULCE, PICANTE & HECHO EN LA ✦ SWEET, SPICY & MADE IN LA ✦</span></div>
+<div class="announce"><span class="announce-text">KANDY WILL NEVER BE THE SAME ✦ ENVÍO GRATIS EN ÓRDENES DE $50+ ✦ BUILD YOUR OWN BUNDLE BOX ✦ MANGO RIM DIP NOW AVAILABLE ✦ DULCE, PICANTE & HECHO EN LA ✦ EST. 2021 ✦</span></div>
 
 <!-- NAVIGATION -->
 <nav class="nav"><div class="nav-inner">
 <div class="nav-links-left" id="navLeft"><a class="nav-link" href="#shop">Shop</a><a class="nav-link" href="#bundle">Bundles</a><a class="nav-link" href="#owner">About</a></div>
 <div class="nav-logo-center"><img src="https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/b4185e596_Screenshot2026-07-16at32658PM.png" alt="Kandy K Shop"></div>
-<div class="nav-links-right" id="navRight"><a class="nav-link" href="#carousel">Moments</a><a class="nav-link" href="#reviews">Reviews</a><a class="nav-link" href="#spin">Spin to Win</a>
+<div class="nav-links-right" id="navRight"><a class="nav-link" href="#carousel">Moments</a><a class="nav-link" href="#reviews">Reviews</a><a class="nav-link" href="#raffle">Raffle</a>
 <button class="cart-btn" onclick="openCart()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg><span class="cart-badge" id="cartBadge" style="display:none">0</span></button></div>
 <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
 </div></nav>
 
 <!-- HERO -->
-<section class="hero"><div class="hero-content">
+<section class="hero">
+<img class="hero-logo-big" src="https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/b4185e596_Screenshot2026-07-16at32658PM.png" alt="Kandy K Shop">
+<div class="hero-content">
 <span class="spanglish">Dulce, Picante & Hecho en LA 🔥</span>
-<h1>Candy Will Never<br><span class="accent">Be The Same.</span><span class="accent-pink">Period.</span></h1>
-<p>Sweet, spicy, tangy and packed with personality. Kandy K favorites are made to turn every craving into a flavor-filled moment. From LA to Mexico and back — esta candy hits different.</p>
-<div class="hero-btns"><a href="#shop" class="btn btn-primary">Shop the Candy Crew 🍬</a><a href="#bundle" class="btn btn-secondary">Build a Bundle Box 📦</a></div>
-</div></section>
+<h1>The Best Kandy in LA.<br><span class="accent">Period.</span></h1>
+<p>Sweet, spicy, tangy and packed with personality. Kandy K Shop is made to turn every craving into a flavor-filled moment. From LA to Mexico and back — esta kandy hits different.</p>
+<div class="hero-btns"><a href="#shop" class="btn btn-primary">Shop the Kandy Crew 🍬</a><a href="#bundle" class="btn btn-secondary">Build a Bundle Box 📦</a></div>
+</div>
+</section>
 
 <!-- BENEFITS -->
 <div class="benefits">
-<div class="benefit"><div class="benefit-icon" style="background:rgba(255,182,39,.15)">🚚</div><div class="benefit-text">Free Shipping on $50+</div></div>
-<div class="benefit"><div class="benefit-icon" style="background:rgba(230,57,136,.15)">🌶️</div><div class="benefit-text">Made Fresh con Chamoy</div></div>
-<div class="benefit"><div class="benefit-icon" style="background:rgba(46,196,182,.15)">🔥</div><div class="benefit-text">Sweet + Spicy Flavors</div></div>
-<div class="benefit"><div class="benefit-icon" style="background:rgba(126,211,33,.15)">✅</div><div class="benefit-text">Venmo & Zelle Checkout</div></div>
+<div class="benefit"><div class="benefit-icon" style="background:rgba(230,57,136,.12)">🚚</div><div class="benefit-text">Free Shipping on $50+</div></div>
+<div class="benefit"><div class="benefit-icon" style="background:rgba(255,77,109,.12)">🌶️</div><div class="benefit-text">Made Fresh con Chamoy</div></div>
+<div class="benefit"><div class="benefit-icon" style="background:rgba(255,143,171,.12)">🔥</div><div class="benefit-text">Sweet + Spicy Flavors</div></div>
+<div class="benefit"><div class="benefit-icon" style="background:rgba(183,110,121,.12)">✅</div><div class="benefit-text">Stripe, Venmo & Zelle</div></div>
 </div>
 
 <!-- PRODUCTS -->
 <section class="section products-section" id="shop">
-<div class="section-header"><span class="spanglish-tag">La Crew de Candy 🍬</span><h2>Meet the Candy Crew</h2><p>Every member brings a different flavor to the party. ¿Quién tienes antojo hoy?</p></div>
-<div class="product-filters"><button class="filter-btn active" onclick="setFilter('all')">All</button><button class="filter-btn" onclick="setFilter('crew')">Candy Crew</button><button class="filter-btn" onclick="setFilter('dip')">Rim Dips</button><button class="filter-btn" onclick="setFilter('bundle')">Bundles</button></div>
+<div class="section-header"><span class="spanglish-tag">La Krew 🍬</span><h2>Meet the Kandy Krew</h2><p>Every member brings a different flavor to the party. ¿Quién tienes antojo hoy?</p></div>
+<div class="product-filters"><button class="filter-btn active" onclick="setFilter('all')">All</button><button class="filter-btn" onclick="setFilter('crew')">Kandy Krew</button><button class="filter-btn" onclick="setFilter('dip')">Rim Dips</button><button class="filter-btn" onclick="setFilter('bundle')">Bundles</button></div>
 <div class="products-grid" id="productsGrid"></div>
 </section>
 
@@ -264,18 +311,24 @@ h1,h2,h3,h4{font-family:'Fredoka',sans-serif}
 <section class="section bundle-section" id="bundle">
 <div class="section-header"><span class="spanglish-tag">Bundles & Rim Dips 🥭</span><h2>Bundle Boxes & Mango Rim Dip</h2><p>Stock up on your favorites or try something new — tu antojo, tu manera.</p></div>
 <div class="bundle-grid">
-<div class="bundle-card"><h3>Build Your Own Bundle 📦</h3><p>Pick your favorite Candy Crew flavors and build a custom bundle box. Mix, match, and save.</p><div class="price">$15+</div><a href="#shop" class="btn btn-primary">Start Building</a></div>
-<div class="dip-card"><h3>Mango Rim Dip 🥭🌶️</h3><p>Tangy mango chamoy rim dip — perfect for drinks, candy, and everything spicy. Put it on everything.</p><div class="price">$7</div><a href="#shop" class="btn btn-secondary" style="border-color:var(--fuchsia);color:var(--fuchsia)">Get the Dip</a></div>
+<div class="bundle-card"><h3>Build Your Own Bundle 📦</h3><p>Pick your favorite Kandy Krew flavors and build a custom bundle box. Mix, match, and save.</p><div class="price">$15+</div><a href="#shop" class="btn btn-primary">Start Building</a></div>
+<div class="dip-card"><h3>Mango Rim Dip 🥭🌶️</h3><p>Tangy mango chamoy rim dip — perfect for drinks, kandy, and everything spicy. Put it on everything.</p><div class="price">$7</div><a href="#shop" class="btn btn-secondary">Get the Dip</a></div>
 </div></section>
 
 <!-- OWNER -->
 <section class="owner-section" id="owner">
 <div class="owner-grid">
 <div class="owner-img"><img src="https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/e50190ab7_IMG_3062.jpg" alt="Karissa G" loading="lazy"></div>
-<div class="owner-text"><span class="owner-tag">La Jefa 🎂</span><h2>Meet Karissa G.</h2>
-<p>LA-born, Mexico-sourced, and candy-obsessed since day one. Karissa didn't just start a candy business — she started a whole vibe. Kandy K Shop is what happens when you grow up on chamoy, know where to find the good stuff, and refuse to settle for boring candy.</p>
-<p>From catering events to late-night cravings, every bag is packed with real love and real flavor. Sweet, spicy, tangy, and always made fresh. That's not just a hustle — that's a legacy being built one sweet drop at a time.</p>
-<p class="signature">— Kandy K Shop, LA ✨</p>
+<div class="owner-text">
+<span class="owner-tag">La Jefa 🎂</span>
+<h2>Meet Karissa G.</h2>
+<p>LA-born, Mexico-sourced, and kandy-obsessed since day one. <span class="highlight">Karissa didn't just start a kandy business — she started a whole vibe.</span> Kandy K Shop is what happens when a creative, strong woman grows up on chamoy, knows where to find the good stuff, and refuses to settle for boring kandy.</p>
+<p>She's in her 30s, she's inspiring, and she's been building this brand for over five years. From catering events to late-night cravings, every bag is packed with real love and real flavor. Sweet, spicy, tangy, and always made fresh. <span class="highlight">That's not just a hustle — that's a legacy being built one sweet drop at a time.</span></p>
+<p>She sources from Mexico. She caters with experience. She sells with heart. And honestly? She's just getting started.</p>
+<div class="personal-note">
+<p>"Her chamoy kandy is literally what I use for my rim paste at every single bartending gig. Hands down, one of the best kandies I've had in a really long time. She puts so much work and dedication into every batch — you can taste the difference. This whole website is my gift to her, because she deserves to be celebrated as the smart, creative entrepreneur she is."</p>
+<span class="signed">— Victoria, your sister-in-law 💕</span>
+</div>
 </div></div>
 </section>
 
@@ -285,48 +338,74 @@ h1,h2,h3,h4{font-family:'Fredoka',sans-serif}
 <div class="carousel-wrap"><div class="carousel-track" id="carouselTrack"></div></div>
 </section>
 
-<!-- REVIEWS -->
+<!-- REVIEWS CAROUSEL -->
 <section class="section reviews-section" id="reviews">
-<div class="section-header"><span class="spanglish-tag">La Crew Has Spoken 💬</span><h2>Real Reviews, Real Candy</h2><p>Don't take our word for it — la crew knows what's up.</p></div>
-<div class="reviews-grid" id="reviewsGrid"></div>
+<div class="section-header"><span class="spanglish-tag">La Krew Has Spoken 💬</span><h2>Real Reviews, Real Kandy</h2><p>Don't take our word for it — la krew knows what's up.</p></div>
+<div class="reviews-carousel-wrap"><div class="reviews-track" id="reviewsTrack"></div></div>
 </section>
 
-<!-- SPIN WHEEL -->
-<section class="section spin-section" id="spin">
-<div class="section-header"><span class="spanglish-tag">Gira para Ganar 🎡</span><h2>Spin to Win a Discount</h2><p>Every spin wins. ¿Lista para tu premio?</p></div>
-<div class="spin-wrap"><div class="spin-wheel-container"><div class="spin-pointer"></div><div class="spin-wheel" id="spinWheel">
-<div class="spin-segment" style="background:#E63988;transform:rotate(0deg)"><div class="spin-segment-inner">10% OFF</div></div>
-<div class="spin-segment" style="background:#FFB627;transform:rotate(45deg)"><div class="spin-segment-inner" style="color:#0a0a0a">15% OFF</div></div>
-<div class="spin-segment" style="background:#2EC4B6;transform:rotate(90deg)"><div class="spin-segment-inner">FREE SHIP</div></div>
-<div class="spin-segment" style="background:#7ED321;transform:rotate(135deg)"><div class="spin-segment-inner">5% OFF</div></div>
-<div class="spin-segment" style="background:#FF4D6D;transform:rotate(180deg)"><div class="spin-segment-inner">20% OFF</div></div>
-<div class="spin-segment" style="background:#FFD470;transform:rotate(225deg)"><div class="spin-segment-inner" style="color:#0a0a0a">FREE DIP</div></div>
-<div class="spin-segment" style="background:#E63988;transform:rotate(270deg)"><div class="spin-segment-inner">10% OFF</div></div>
-<div class="spin-segment" style="background:#2EC4B6;transform:rotate(315deg)"><div class="spin-segment-inner">BOGO 50</div></div>
-</div></div>
-<button class="spin-btn" id="spinBtn" onclick="spinWheel()">🎡 Spin the Wheel!</button>
-<div class="spin-result" id="spinResult"><div class="prize" id="spinPrize"></div><div style="margin-bottom:8px;color:rgba(255,255,255,.6);font-size:.85rem">Copy your code:</div><div class="code" id="spinCode" onclick="copySpinCode()"></div></div>
-</div></section>
+<!-- RAFFLE -->
+<section class="section raffle-section" id="raffle">
+<div class="section-header"><span class="spanglish-tag">Sorteo Cada Dos Semanas 🎟️</span><h2>Kandy K Raffle</h2><p>Enter to win exclusive drops, free bundles, and more. New winner every two weeks.</p></div>
+<div class="raffle-container">
+<div class="wheel-wrap">
+<div class="wheel-stage">
+<div class="wheel-base"></div>
+<svg class="wheel-svg" id="raffleWheel" viewBox="0 0 300 300" style="filter:drop-shadow(0 8px 24px rgba(0,0,0,.5))">
+<defs>
+<radialGradient id="kandyGrad" cx="35%" cy="30%"><stop offset="0%" stop-color="#1a1a1a"/><stop offset="55%" stop-color="#0f0a0f"/><stop offset="100%" stop-color="#0a0a0a"/></radialGradient>
+</defs>
+<circle cx="150" cy="150" r="140" fill="url(#kandyGrad)" stroke="#E63988" stroke-width="3"/>
+<g id="wheelSegments" opacity="0.4"></g>
+<path d="M 150 10 C 70 10, 10 70, 10 150 C 10 230, 70 290, 150 290" fill="none" stroke="#FF4D6D" stroke-width="3" stroke-dasharray="6 4" stroke-linecap="round"/>
+<path d="M 150 10 C 230 10, 290 70, 290 150 C 290 230, 230 290, 150 290" fill="none" stroke="#FF4D6D" stroke-width="3" stroke-dasharray="6 4" stroke-linecap="round"/>
+<circle cx="150" cy="150" r="12" fill="#0a0a0a" stroke="#E63988" stroke-width="2"/>
+</svg>
+<div class="wheel-center-logo"><img src="https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/b4185e596_Screenshot2026-07-16at32658PM.png" alt="Kandy K Shop"></div>
+<div class="wheel-pointer"><svg width="20" height="50" viewBox="0 0 20 50"><defs><linearGradient id="kandyPointer" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FF8FAB"/><stop offset="50%" stop-color="#FF4D6D"/><stop offset="100%" stop-color="#E63988"/></linearGradient></defs><path d="M 4 0 L 16 0 L 14 42 Q 14 48 10 50 Q 6 48 6 42 Z" fill="url(#kandyPointer)" stroke="#E63988" stroke-width="0.5"/></svg></div>
+</div>
+</div>
+<div class="raffle-info">
+<h3>Kandy K Giveaway</h3>
+<p class="raffle-prize">🏆 Win: Free Bundle Box + Mango Rim Dip</p>
+<p class="raffle-desc">Enter for your shot at a free Kandy K bundle box with all your favorite flavors, plus a Mango Rim Dip. New winner every two weeks. Don't miss out.</p>
+<div class="raffle-stats">
+<div class="raffle-stat"><div class="num" id="entryCount">128</div><div class="lbl">Entries</div></div>
+<div class="raffle-stat"><div class="num">$3</div><div class="lbl">Per Entry</div></div>
+<div class="raffle-stat"><div class="num">7d</div><div class="lbl">Remaining</div></div>
+</div>
+<form class="raffle-form" onsubmit="enterRaffle(event)">
+<input type="text" placeholder="Your name" required>
+<input type="email" placeholder="Email address" required>
+<button type="submit" class="btn btn-primary" style="width:100%">Enter to Win — $3</button>
+</form>
+</div>
+</div>
+</section>
 
-<!-- BIRTHDAY SURPRISE -->
+<!-- BIRTHDAY -->
 <section class="birthday-kandy" id="birthday">
 <div class="bday-balloon" style="top:8%;left:5%;animation-delay:0s">🎈</div>
 <div class="bday-balloon" style="top:12%;right:6%;animation-delay:1s">🎂</div>
 <div class="bday-balloon" style="top:40%;left:2%;animation-delay:2s">🎉</div>
 <div class="bday-balloon" style="bottom:20%;right:3%;animation-delay:1.5s">🍬</div>
 <div class="bday-balloon" style="bottom:10%;left:10%;animation-delay:3s">🎈</div>
-<div class="bday-confetti-k" style="left:10%;background:#ff69b4;animation-delay:0s;animation-duration:3.5s"></div>
-<div class="bday-confetti-k" style="left:25%;background:#ffd700;animation-delay:.7s;animation-duration:4s"></div>
-<div class="bday-confetti-k" style="left:50%;background:#ff1493;animation-delay:1.2s;animation-duration:3.8s"></div>
-<div class="bday-confetti-k" style="left:70%;background:#ffd700;animation-delay:.3s;animation-duration:4.2s"></div>
-<div class="bday-confetti-k" style="left:88%;background:#ff69b4;animation-delay:1.8s;animation-duration:3.6s"></div>
+<div class="bday-confetti-k" style="left:10%;background:#FF4D6D;animation-delay:0s;animation-duration:3.5s"></div>
+<div class="bday-confetti-k" style="left:25%;background:#FF8FAB;animation-delay:.7s;animation-duration:4s"></div>
+<div class="bday-confetti-k" style="left:50%;background:#E63988;animation-delay:1.2s;animation-duration:3.8s"></div>
+<div class="bday-confetti-k" style="left:70%;background:#FF8FAB;animation-delay:.3s;animation-duration:4.2s"></div>
+<div class="bday-confetti-k" style="left:88%;background:#FF4D6D;animation-delay:1.8s;animation-duration:3.6s"></div>
 <div class="birthday-content-k">
 <div class="bday-text-k">
 <div class="bday-badge-k">🎂 Happy Birthday, Karissa G.</div>
 <h2 class="bday-title-k">Happy Birthday<span>Karissa! 🎉</span></h2>
 <p class="bday-sub-k">The heart, the hustle, the one who made chamoy iconic.</p>
-<p class="bday-message-k"><strong>Karissa G.</strong> — this one's for you. You didn't just start a candy business, you started a whole vibe. Kandy K Shop is proof that when you pour real love into something, people taste the difference. Every bag, every box, every chamoy-dripped creation — that's your fingerprints all over it.<br><br>You come from LA. You source from Mexico. You cater with experience and you sell with heart. That's not just a hustle, that's a legacy being built one sweet drop at a time. You're 30 now, and honestly? This is just the beginning.<br><br>From the bottom: you are loved, you are seen, and Kandy K Shop is going to be HUGE. Happy birthday, mija. 💛🍬</p>
+<p class="bday-message-k"><strong>Karissa G.</strong> — this one's for you. You didn't just start a kandy business, you started a whole vibe. Kandy K Shop is proof that when you pour real love into something, people taste the difference. Every bag, every box, every chamoy-dripped creation — that's your fingerprints all over it.<br><br>You come from LA. You source from Mexico. You cater with experience and you sell with heart. That's not just a hustle, that's a legacy being built one sweet drop at a time. You're 30 now, and honestly? This is just the beginning.<br><br>From the bottom: you are loved, you are seen, and Kandy K Shop is going to be HUGE. Happy birthday, mija. 💛🍬</p>
 <p class="bday-sig-k">— Your sister-in-law built you a whole website for your birthday. That's love AND a flex. Happy 30th, Karissa! 🎂✨</p>
+<div class="bday-extra-k">
+<p>You're a creative force. A smart woman. An entrepreneur who turns chamoy into art. Five years in and just getting started.</p>
+<p>Here's to more flavors, more late nights, more sold-out batches, and more people tasting your kandy and saying "damn, this is different."</p>
+</div>
 </div>
 <div class="bday-video-k" id="bdayVideoK">
 <div class="bday-play-badge-k">🎂 Birthday Moments</div>
@@ -344,26 +423,26 @@ h1,h2,h3,h4{font-family:'Fredoka',sans-serif}
 <footer class="footer"><div class="footer-inner">
 <div class="footer-logo"><img src="https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/b4185e596_Screenshot2026-07-16at32658PM.png" alt="Kandy K Shop"></div>
 <div class="footer-grid">
-<div class="footer-col"><h4>Shop</h4><a href="#shop">Candy Crew</a><a href="#bundle">Bundle Boxes</a><a href="#bundle">Mango Rim Dip</a><a href="#spin">Spin to Win</a></div>
-<div class="footer-col"><h4>Company</h4><a href="#owner">About Us</a><a href="#carousel">Sweet Moments</a><a href="#reviews">Reviews</a><a href="#birthday">Birthday</a></div>
+<div class="footer-col"><h4>Shop</h4><a href="#shop">Kandy Krew</a><a href="#bundle">Bundle Boxes</a><a href="#bundle">Mango Rim Dip</a><a href="#raffle">Raffle</a></div>
+<div class="footer-col"><h4>Company</h4><a href="#owner">About Karissa</a><a href="#carousel">Sweet Moments</a><a href="#reviews">Reviews</a><a href="#birthday">Birthday</a></div>
 <div class="footer-col"><h4>Support</h4><a href="#">Shipping Info</a><a href="#">FAQ</a><a href="#">Contact Us</a></div>
 <div class="footer-col"><h4>Legal</h4><a href="#">Privacy Policy</a><a href="#">Refund Policy</a><a href="#">Terms of Service</a></div>
 <div class="footer-col"><h4>Connect</h4><a href="https://instagram.com/kandykshop" target="_blank">Instagram</a><a href="#">Newsletter</a></div>
 </div>
-<div class="footer-bottom"><p>© 2026 Kandy K Shop. Dulce, picante & hecho en LA. 🍬</p><p style="margin-top:8px;opacity:.5">Secure checkout via Venmo & Zelle. Stripe coming soon.</p></div>
+<div class="footer-bottom"><p>© 2026 Kandy K Shop. EST. 2021. Dulce, picante & hecho en LA. 🍬</p><p style="margin-top:8px;opacity:.5">Secure checkout via Stripe, Venmo & Zelle.</p></div>
 </div></footer>
 
 <!-- CART DRAWER -->
 <div class="overlay-bg" id="overlayBg" onclick="closeCart()"></div>
 <div class="cart-drawer" id="cartDrawer">
-<div class="cart-header"><h3>Your Candy Bag 🍬</h3><button class="cart-close" onclick="closeCart()">&times;</button></div>
-<div class="cart-body" id="cartBody"><div class="cart-empty">Your bag is empty. Time to get some candy! 🍬</div></div>
+<div class="cart-header"><h3>Your Kandy Bag 🍬</h3><button class="cart-close" onclick="closeCart()">&times;</button></div>
+<div class="cart-body" id="cartBody"><div class="cart-empty">Your bag is empty. Time to get some kandy! 🍬</div></div>
 <div class="cart-footer" id="cartFooter" style="display:none">
 <div class="shipping-progress needs" id="shippingProgress"></div>
 <div class="promo-input-row"><input type="text" class="promo-input" id="promoInput" placeholder="Enter promo code"><button class="promo-apply" onclick="applyPromo()">Apply</button></div>
 <div class="cart-total"><span>Total</span><span class="amount" id="cartTotal">$0.00</span></div>
-<button class="cart-checkout" onclick="checkout()">Checkout via Venmo/Zelle</button>
-<button class="cart-venmo" onclick="alert('Stripe card checkout coming soon! For now, pay via Venmo @kandykshop or Zelle.')">Pay with Card (Coming Soon)</button>
+<button class="cart-checkout" onclick="checkoutStripe()">Pay with Card (Stripe)</button>
+<button class="cart-stripe" onclick="checkout()">Checkout via Venmo/Zelle</button>
 </div></div>
 
 <!-- PRODUCT MODAL -->
@@ -378,17 +457,18 @@ h1,h2,h3,h4{font-family:'Fredoka',sans-serif}
 </div></div>
 
 <script>
+const LOGO_URL="https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/b4185e596_Screenshot2026-07-16at32658PM.png";
 const PRODUCTS=[
-{id:1,name:"El Manguito",cat:"crew",price:7,img:"https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/1814fe50c_generated_image.png",caption:"Small mango candies with tangy chamoy.",desc:"Small mango candies with a tangy chamoy coating and a bright chile kick. Sweet, sour, and spicy in every bite."},
-{id:2,name:"Spicy Bro",cat:"crew",price:7,img:"https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/85050b942_generated_image.png",caption:"Bold sweet-and-spicy candy mix.",desc:"A bold sweet-and-spicy candy mix with serious flavor. For those who like it hot."},
+{id:1,name:"El Manguito",cat:"crew",price:7,img:"https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/1814fe50c_generated_image.png",caption:"Small mango kandies with tangy chamoy.",desc:"Small mango kandies with a tangy chamoy coating and a bright chile kick. Sweet, sour, and spicy in every bite."},
+{id:2,name:"Spicy Bro",cat:"crew",price:7,img:"https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/85050b942_generated_image.png",caption:"Bold sweet-and-spicy kandy mix.",desc:"A bold sweet-and-spicy kandy mix with serious flavor. For those who like it hot."},
 {id:3,name:"Peach Rings",cat:"crew",price:7,img:"https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/64ee4f7d6_generated_image.png",caption:"Juicy peach rings with spicy coating.",desc:"Juicy peach rings covered in the perfect sweet, tangy, and spicy coating. A classic with a kick."},
-{id:4,name:"Spicy Gush",cat:"crew",price:7,img:"https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/14e9cdb69_generated_image.png",caption:"Fruit-filled candy with sweet heat.",desc:"Fruit-filled candy bites with a gush of sweet heat. Bite in and let the flavor explode."},
-{id:5,name:"Picasso Mix",cat:"crew",price:7,img:"https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/f8be9239a_generated_image.png",caption:"Colorful signature assortment.",desc:"A colorful signature assortment of sweet, sour, fruity, and spicy candy. Something different in every handful."},
-{id:6,name:"Picasso Watermelon",cat:"crew",price:7,img:"https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/a168c7f34_generated_image.png",caption:"Watermelon candy with chamoy.",desc:"Juicy watermelon candy transformed with tangy chamoy and chile. Summer in a bag."},
-{id:7,name:"Spicy Littles",cat:"crew",price:7,img:"https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/974223607_generated_image.png",caption:"Tiny rainbow bites, big flavor.",desc:"Tiny rainbow candy bites with big sweet-and-spicy flavor. Small but mighty."},
-{id:8,name:"Spicy Heads",cat:"crew",price:7,img:"https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/67f880640_generated_image.png",caption:"Sour chewy candy, spicy finish.",desc:"Sour, chewy candy with a bold spicy finish. Pucker up, then feel the heat."},
-{id:9,name:"Mango Rim Dip",cat:"dip",price:7,img:"https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/7e7a976f3_generated_image.png",caption:"Tangy mango chamoy rim dip.",desc:"Tangy mango chamoy rim dip — perfect for drinks, candy, and everything spicy."},
-{id:10,name:"Bundle Box",cat:"bundle",price:15,img:"https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/b5c40916c_generated_image.png",caption:"Build your own custom candy bundle.",desc:"Choose your favorite Candy Crew flavors and build your own custom bundle box. Coming soon."},
+{id:4,name:"Spicy Gush",cat:"crew",price:7,img:"https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/14e9cdb69_generated_image.png",caption:"Fruit-filled kandy with sweet heat.",desc:"Fruit-filled kandy bites with a gush of sweet heat. Bite in and let the flavor explode."},
+{id:5,name:"Picasso Mix",cat:"crew",price:7,img:"https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/f8be9239a_generated_image.png",caption:"Colorful signature assortment.",desc:"A colorful signature assortment of sweet, sour, fruity, and spicy kandy. Something different in every handful."},
+{id:6,name:"Picasso Watermelon",cat:"crew",price:7,img:"https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/a168c7f34_generated_image.png",caption:"Watermelon kandy with chamoy.",desc:"Juicy watermelon kandy transformed with tangy chamoy and chile. Summer in a bag."},
+{id:7,name:"Spicy Littles",cat:"crew",price:7,img:"https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/974223607_generated_image.png",caption:"Tiny rainbow bites, big flavor.",desc:"Tiny rainbow kandy bites with big sweet-and-spicy flavor. Small but mighty."},
+{id:8,name:"Spicy Heads",cat:"crew",price:7,img:"https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/67f880640_generated_image.png",caption:"Sour chewy kandy, spicy finish.",desc:"Sour, chewy kandy with a bold spicy finish. Pucker up, then feel the heat."},
+{id:9,name:"Mango Rim Dip",cat:"dip",price:7,img:"https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/7e7a976f3_generated_image.png",caption:"Tangy mango chamoy rim dip.",desc:"Tangy mango chamoy rim dip — perfect for drinks, kandy, and everything spicy."},
+{id:10,name:"Bundle Box",cat:"bundle",price:15,img:"https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/b5c40916c_generated_image.png",caption:"Build your own custom kandy bundle.",desc:"Choose your favorite Kandy Krew flavors and build your own custom bundle box. Coming soon."},
 ];
 const SIZES=[{name:"Small",price:7},{name:"Medium",price:11},{name:"Large",price:15}];
 const REVIEWS=[
@@ -397,14 +477,15 @@ const REVIEWS=[
 {text:"OHMYUHGAWD. The Spicy Gush literally changed my life.",author:"Marina",stars:5},
 {text:"Mango Rim Dip on everything now. EVERYTHING.",author:"Jessica T.",stars:5},
 {text:"My kids went crazy for the Picasso Mix. Gone in 2 days.",author:"Roberto M.",stars:5},
-{text:"Spicy Bro lives up to the name. No regrets.",author:"Danny L.",stars:5}
+{text:"Spicy Bro lives up to the name. No regrets.",author:"Danny L.",stars:5},
+{text:"Best chamoy kandy in LA, hands down.",author:"Brianna",stars:5},
+{text:"I put the rim dip on my cocktails. Game changer.",author:"Alex V.",stars:5}
 ];
-const CAROUSEL_LABELS=["Candy Crew Favorites","Spicy Sweet Heat","Mango Chamoy Dip","Bundle Box Time","Fresh Made Daily","LA to Mexico","Sweet + Spicy","Party Ready"];
-const PRIZES=[{name:"10% Off",code:"KANDY10"},{name:"15% Off",code:"KANDY15"},{name:"Free Shipping",code:"KANDYSHIP"},{name:"5% Off",code:"KANDY5"},{name:"20% Off",code:"KANDY20"},{name:"Free Mango Dip",code:"KANDYDIP"},{name:"10% Off",code:"KANDY10"},{name:"BOGO 50%",code:"KANDYBOGO"}];
-let cart=[],modalProduct=null,modalSize=SIZES[0],modalQty=1,currentFilter='all',hasSpun=false,promoDiscount=0,promoCode='';
+const CAROUSEL_LABELS=["Kandy Krew Favorites","Spicy Sweet Heat","Mango Chamoy Dip","Bundle Box Time","Fresh Made Daily","LA to Mexico","Sweet + Spicy","Party Ready"];
+let cart=[],modalProduct=null,modalSize=SIZES[0],modalQty=1,currentFilter='all',promoDiscount=0,promoCode='';
 function renderProducts(){const grid=document.getElementById('productsGrid');const f=currentFilter==='all'?PRODUCTS:PRODUCTS.filter(p=>p.cat===currentFilter);grid.innerHTML=f.map(p=>'<div class="product-card" onclick="openProductModal('+p.id+')"><div class="product-img-wrap"><img src="'+p.img+'" alt="'+p.name+'" loading="lazy">'+(p.cat==='dip'?'<div class="product-badge">Fan Fave</div>':'')+'</div><div class="product-info"><div class="product-name">'+p.name+'</div><div class="product-caption">'+p.caption+'</div><div class="product-price">From $'+p.price+'</div></div></div>').join('')}
 function setFilter(f){currentFilter=f;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');renderProducts()}
-function renderReviews(){document.getElementById('reviewsGrid').innerHTML=REVIEWS.map(r=>'<div class="review-bubble"><div class="review-stars">'+ '*'.repeat(r.stars)+'</div><div class="review-text">'+r.text+'</div><div class="review-author">- '+r.author+'</div></div>').join('')}
+function renderReviews(){const track=document.getElementById('reviewsTrack');const items=[...REVIEWS,...REVIEWS];track.innerHTML=items.map(r=>'<div class="review-card"><div class="review-stars">'+'*'.repeat(r.stars)+'</div><div class="review-text">'+r.text+'</div><div class="review-author">- '+r.author+'</div></div>').join('')}
 function initCarousel(){const track=document.getElementById('carouselTrack');const items=[...PRODUCTS,...PRODUCTS];track.innerHTML=items.map((p,i)=>'<div class="carousel-item" data-label="'+CAROUSEL_LABELS[i%CAROUSEL_LABELS.length]+'"><img src="'+p.img+'" alt="'+p.name+'" loading="lazy"></div>').join('')}
 function openProductModal(id){const p=PRODUCTS.find(x=>x.id===id);if(!p)return;modalProduct=p;modalSize=SIZES[0];modalQty=1;document.getElementById('modalImg').src=p.img;document.getElementById('modalName').textContent=p.name;document.getElementById('modalDesc').textContent=p.desc;renderSizeBtns();updateModalPrice();document.getElementById('modalOverlay').classList.add('open')}
 function closeModal(){document.getElementById('modalOverlay').classList.remove('open')}
@@ -416,13 +497,13 @@ function addToCartFromModal(){cart.push({id:Date.now(),product:modalProduct,size
 function openCart(){document.getElementById('cartDrawer').classList.add('open');document.getElementById('overlayBg').classList.add('open')}
 function closeCart(){document.getElementById('cartDrawer').classList.remove('open');document.getElementById('overlayBg').classList.remove('open')}
 function removeFromCart(i){cart.splice(i,1);updateCart()}
-function updateCart(){const body=document.getElementById('cartBody'),footer=document.getElementById('cartFooter'),badge=document.getElementById('cartBadge');if(cart.length===0){body.innerHTML='<div class="cart-empty">Your bag is empty. Time to get some candy! 🍬</div>';footer.style.display='none';badge.style.display='none';return}body.innerHTML=cart.map((item,i)=>'<div class="cart-item"><img class="cart-item-img" src="'+item.product.img+'" alt="'+item.product.name+'"><div class="cart-item-info"><div class="cart-item-name">'+item.product.name+'</div><div class="cart-item-size">'+item.size.name+' - Qty '+item.qty+'</div><div class="cart-item-price">$'+(item.size.price*item.qty).toFixed(2)+'</div></div><button class="cart-item-remove" onclick="removeFromCart('+i+')">&times;</button></div>').join('');footer.style.display='block';const tq=cart.reduce((s,i)=>s+i.qty,0);badge.textContent=tq;badge.style.display='flex';let sub=cart.reduce((s,i)=>s+(i.size.price*i.qty),0);if(promoDiscount>0)sub=sub*(1-promoDiscount/100);document.getElementById('cartTotal').textContent='$'+sub.toFixed(2);const sp=document.getElementById('shippingProgress');if(sub>=50){sp.className='shipping-progress unlocked';sp.textContent='You unlocked free shipping! 🎉'}else{sp.className='shipping-progress needs';sp.textContent="You're $"+(50-sub).toFixed(2)+" away from free shipping! 🚚"}}
+function updateCart(){const body=document.getElementById('cartBody'),footer=document.getElementById('cartFooter'),badge=document.getElementById('cartBadge');if(cart.length===0){body.innerHTML='<div class="cart-empty">Your bag is empty. Time to get some kandy! 🍬</div>';footer.style.display='none';badge.style.display='none';return}body.innerHTML=cart.map((item,i)=>'<div class="cart-item"><img class="cart-item-img" src="'+item.product.img+'" alt="'+item.product.name+'"><div class="cart-item-info"><div class="cart-item-name">'+item.product.name+'</div><div class="cart-item-size">'+item.size.name+' - Qty '+item.qty+'</div><div class="cart-item-price">$'+(item.size.price*item.qty).toFixed(2)+'</div></div><button class="cart-item-remove" onclick="removeFromCart('+i+')">&times;</button></div>').join('');footer.style.display='block';const tq=cart.reduce((s,i)=>s+i.qty,0);badge.textContent=tq;badge.style.display='flex';let sub=cart.reduce((s,i)=>s+(i.size.price*i.qty),0);if(promoDiscount>0)sub=sub*(1-promoDiscount/100);document.getElementById('cartTotal').textContent='$'+sub.toFixed(2);const sp=document.getElementById('shippingProgress');if(sub>=50){sp.className='shipping-progress unlocked';sp.textContent='You unlocked free shipping! 🎉'}else{sp.className='shipping-progress needs';sp.textContent="You're $"+(50-sub).toFixed(2)+" away from free shipping! 🚚"}}
 function applyPromo(){const code=document.getElementById('promoInput').value.trim().toUpperCase();if(code==='KANDY10'||code==='KANDY15'||code==='KANDY20'||code==='KANDY5'){promoDiscount=parseInt(code.match(/\d+/)[0]);promoCode=code;updateCart();alert('Promo applied: '+promoDiscount+'% off! 🎉')}else if(code==='KANDYSHIP'){promoCode=code;updateCart();alert('Free shipping promo applied! 🚚')}else if(code==='KANDYDIP'){promoCode=code;alert('Free Mango Dip added to your order! 🥭')}else if(code==='KANDYBOGO'){promoCode=code;alert('BOGO 50% applied! Buy one get one half off! 🍬')}else{alert('Invalid promo code')}}
 function checkout(){if(cart.length===0)return;let sub=cart.reduce((s,i)=>s+(i.size.price*i.qty),0);if(promoDiscount>0)sub=sub*(1-promoDiscount/100);const ship=sub>=50?0:5;const tot=sub+ship;let m='KANDY K SHOP ORDER 🍬\n\n';cart.forEach(i=>m+=i.product.name+' ('+i.size.name+') x'+i.qty+' - $'+(i.size.price*i.qty).toFixed(2)+'\n');if(promoCode)m+='\nPromo: '+promoCode+'\n';m+='\nSubtotal: $'+sub.toFixed(2)+'\nShipping: '+(ship===0?'FREE':'$'+ship.toFixed(2))+'\nTotal: $'+tot.toFixed(2)+'\n\nVenmo: @kandykshop\nZelle: coming soon\n\nSend payment and screenshot to confirm!';alert(m)}
-function spinWheel(){if(hasSpun){alert('You already spun! One spin per customer. 🎡');return}const btn=document.getElementById('spinBtn'),wheel=document.getElementById('spinWheel');btn.disabled=true;btn.textContent='Spinning... 🎡';const pi=Math.floor(Math.random()*8),prize=PRIZES[pi];const sa=pi*45+22.5;const fs=3+Math.floor(Math.random()*3);const tr=fs*360+(360-sa);wheel.style.setProperty('--spin-target',tr+'deg');wheel.classList.add('spinning');setTimeout(()=>{wheel.classList.remove('spinning');wheel.style.transform='rotate('+tr+'deg)';document.getElementById('spinPrize').textContent='You won: '+prize.name+'! 🎉';document.getElementById('spinCode').textContent=prize.code;document.getElementById('spinResult').classList.add('show');btn.textContent='Done! ✅';btn.disabled=true;hasSpun=true;try{localStorage.setItem('kk_spun','true')}catch(e){}},4000)}
-function copySpinCode(){const c=document.getElementById('spinCode').textContent;navigator.clipboard.writeText(c).then(()=>alert('Code "'+c+'" copied! 📋'))}
+async function checkoutStripe(){if(cart.length===0)return;let sub=cart.reduce((s,i)=>s+(i.size.price*i.qty),0);if(promoDiscount>0)sub=sub*(1-promoDiscount/100);const ship=sub>=50?0:5;const tot=sub+ship;const amountCents=Math.round(tot*100);let productNames=cart.map(i=>i.product.name+' ('+i.size.name+') x'+i.qty).join(', ');try{const res=await fetch('https://base44.app/api/apps/6a4e9d6e7eff63beda95751e/backend-functions/createKandyKCheckout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({amount:amountCents,productName:'Kandy K Shop Order'})});const data=await res.json();if(data.url){window.location.href=data.url}else{alert('Sorry, something went wrong with Stripe. Try Venmo/Zelle or try again.')}}catch(e){alert('Connection error. Please try again or use Venmo/Zelle.')}}
+function enterRaffle(e){e.preventDefault();const form=e.target;const name=form.querySelector('input[type=text]').value;const email=form.querySelector('input[type=email]').value;if(!name||!email)return;const count=document.getElementById('entryCount');count.textContent=parseInt(count.textContent)+1;form.innerHTML='<div style="text-align:center;padding:20px"><p style="font-size:1.2rem;color:#FF8FAB;font-weight:600;margin-bottom:8px">🎉 You\'re in!</p><p style="color:rgba(255,255,255,.6);font-size:.85rem">Good luck, '+name+'! Winner announced on Instagram @kandykshop.</p></div>'}
 function toggleMobileMenu(){document.getElementById('navLeft').classList.toggle('mobile-open');document.getElementById('navRight').classList.toggle('mobile-open')}
-window.addEventListener('DOMContentLoaded',()=>{renderProducts();renderReviews();initCarousel();try{if(localStorage.getItem('kk_spun')==='true'){hasSpun=true;document.getElementById('spinBtn').textContent='Already Spun ✅';document.getElementById('spinBtn').disabled=true}}catch(e){}});
+window.addEventListener('DOMContentLoaded',()=>{renderProducts();renderReviews();initCarousel()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeCart()}});
 </script>
 
