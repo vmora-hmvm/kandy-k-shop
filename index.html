@@ -171,6 +171,168 @@ h1,h2,h3,h4{font-family:'Fredoka',sans-serif}
 .promo-apply{padding:10px 16px;border-radius:8px;border:none;background:var(--turquoise);color:#fff;cursor:pointer;font-family:'Fredoka',sans-serif;font-size:.8rem}
 .overlay-bg{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:150;display:none}
 .overlay-bg.show{display:block}
+
+/* ===== BIRTHDAY SECTION ===== */
+.birthday-kandy {
+  position: relative;
+  background: linear-gradient(135deg, #1a0a1e 0%, #2d0a3a 40%, #1a0a1e 100%);
+  padding: 100px 0;
+  overflow: hidden;
+}
+.birthday-kandy::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(255,105,180,.08), transparent 60%),
+              radial-gradient(ellipse at 70% 50%, rgba(255,215,0,.06), transparent 60%);
+  pointer-events: none;
+}
+.bday-balloon {
+  position: absolute;
+  font-size: 2rem;
+  animation: floatBalloon 6s ease-in-out infinite;
+  opacity: 0.7;
+}
+@keyframes floatBalloon {
+  0%,100%{transform:translateY(0) rotate(-5deg);}
+  50%{transform:translateY(-20px) rotate(5deg);}
+}
+.bday-confetti-k {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  animation: confettiFall 4s linear infinite;
+}
+@keyframes confettiFall {
+  0%{transform:translateY(-20px) rotate(0deg);opacity:1;}
+  100%{transform:translateY(110vh) rotate(720deg);opacity:0;}
+}
+.birthday-content-k {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+}
+.bday-text-k {
+  color: #fff;
+}
+.bday-badge-k {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff69b4, #ff1493);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+.bday-title-k {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  color: #fff;
+}
+.bday-title-k span {
+  display: block;
+  background: linear-gradient(135deg, #ffd700, #ffb700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.bday-sub-k {
+  font-size: 1rem;
+  color: #ff69b4;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.bday-message-k {
+  font-size: .92rem;
+  line-height: 1.85;
+  color: rgba(255,255,255,.82);
+  margin-bottom: 20px;
+}
+.bday-sig-k {
+  font-style: italic;
+  color: #ffd700;
+  font-size: .88rem;
+  line-height: 1.7;
+}
+/* Slideshow */
+.bday-video-k {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.6), 0 0 0 3px rgba(255,105,180,.3);
+  background: #0d0010;
+  aspect-ratio: 4/5;
+  max-width: 380px;
+  margin: 0 auto;
+}
+.bday-play-badge-k {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(255,105,180,.9);
+  color: #fff;
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  z-index: 3;
+  text-transform: uppercase;
+}
+.bday-slides-k {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.bday-slide-k {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+.bday-slide-k.active { opacity: 1; }
+.bday-slide-k img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.bday-dots-k {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 3;
+}
+.bday-dots-k span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.4);
+  transition: background .3s;
+}
+.bday-dots-k span.on { background: #ff69b4; }
+@media(max-width:768px){
+  .birthday-content-k{grid-template-columns:1fr;gap:36px;padding:0 20px;}
+  .bday-video-k{max-width:300px;}
+}
+
 </style>
 </head>
 <body>
@@ -331,6 +493,78 @@ function copySpinCode(){const c=document.getElementById('spinCode').textContent;
 function toggleMobileMenu(){document.getElementById('navLeft').classList.toggle('mobile-open');document.getElementById('navRight').classList.toggle('mobile-open')}
 window.addEventListener('DOMContentLoaded',()=>{renderProducts();initCarousel();try{if(localStorage.getItem('kk_spun')==='true'){hasSpun=true;const b=document.getElementById('spinBtn');b.textContent='Already Spun';b.disabled=true}}catch(e){}});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeCart()}});
+</script>
+
+<!-- ===== BIRTHDAY SURPRISE — KARISSA ===== -->
+<section class="birthday-kandy" id="birthday">
+  <div class="bday-balloon" style="top:8%;left:5%;animation-delay:0s;">🎈</div>
+  <div class="bday-balloon" style="top:12%;right:6%;animation-delay:1s;">🎂</div>
+  <div class="bday-balloon" style="top:40%;left:2%;animation-delay:2s;">🎉</div>
+  <div class="bday-balloon" style="bottom:20%;right:3%;animation-delay:1.5s;">🍬</div>
+  <div class="bday-balloon" style="bottom:10%;left:10%;animation-delay:3s;">🎈</div>
+  <div class="bday-confetti-k" style="left:10%;background:#ff69b4;animation-delay:0s;animation-duration:3.5s;"></div>
+  <div class="bday-confetti-k" style="left:25%;background:#ffd700;animation-delay:.7s;animation-duration:4s;"></div>
+  <div class="bday-confetti-k" style="left:50%;background:#ff1493;animation-delay:1.2s;animation-duration:3.8s;"></div>
+  <div class="bday-confetti-k" style="left:70%;background:#ffd700;animation-delay:.3s;animation-duration:4.2s;"></div>
+  <div class="bday-confetti-k" style="left:88%;background:#ff69b4;animation-delay:1.8s;animation-duration:3.6s;"></div>
+
+  <div class="birthday-content-k">
+    <!-- Left: shoutout text -->
+    <div class="bday-text-k">
+      <div class="bday-badge-k">🎂 Happy Birthday, Karissa G.</div>
+      <h2 class="bday-title-k">
+        Happy Birthday
+        <span>Karissa! 🎉</span>
+      </h2>
+      <p class="bday-sub-k">The heart, the hustle, the one who made chamoy iconic.</p>
+
+      <p class="bday-message-k">
+        <strong>Karissa G.</strong> — this one's for you. You didn't just start a candy business, you started a whole vibe. Kandy K Shop is proof that when you pour real love into something, people taste the difference. Every bag, every box, every chamoy-dripped creation — that's your fingerprints all over it.
+        <br><br>
+        You come from LA. You source from Mexico. You cater with experience and you sell with heart. That's not just a hustle, that's a legacy being built one sweet drop at a time. You're 30 now, and honestly? This is just the beginning.
+        <br><br>
+        From the bottom: you are loved, you are seen, and Kandy K Shop is going to be HUGE. Happy birthday, mija. 💛🍬
+      </p>
+      <p class="bday-sig-k">— Your sister-in-law built you a whole website for your birthday. That's love AND a flex. Happy 30th, Karissa! 🎂✨</p>
+    </div>
+
+    <!-- Right: photo slideshow -->
+    <div class="bday-video-k" id="bdayVideoK">
+      <div class="bday-play-badge-k">🎂 Birthday Moments</div>
+      <div class="bday-dots-k" id="bdayDotsK">
+        <span class="on"></span><span></span><span></span>
+      </div>
+      <div class="bday-slides-k" id="bdaySlidesK">
+        <div class="bday-slide-k active">
+          <img src="https://base44.app/api/apps/6a4e9d6e7eff63beda95751e/files/mp/public/6a4e9d6e7eff63beda95751e/f8abe6758_karissa_bday.jpg" alt="Happy 30th Birthday Karissa" loading="lazy">
+        </div>
+        <div class="bday-slide-k">
+          <img src="https://base44.app/api/apps/6a4e9d6e7eff63beda95751e/files/mp/public/6a4e9d6e7eff63beda95751e/803982843_karissa_friends.jpg" alt="Karissa and friends" loading="lazy">
+        </div>
+        <div class="bday-slide-k">
+          <img src="https://base44.app/api/apps/6a4e9d6e7eff63beda95751e/files/mp/public/6a4e9d6e7eff63beda95751e/b22e334c9_karissa_family.jpg" alt="Karissa and family" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// ===== BIRTHDAY SLIDESHOW — KARISSA =====
+(function(){
+  let cur = 0;
+  const slides = document.querySelectorAll('.bday-slide-k');
+  const dots = document.querySelectorAll('#bdayDotsK span');
+  if (!slides.length) return;
+  function goTo(n) {
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('on');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('on');
+  }
+  setInterval(() => goTo(cur + 1), 3000);
+})();
 </script>
 </body>
 </html>
