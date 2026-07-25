@@ -27,12 +27,12 @@ h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif}
 .nav-links-right{justify-content:flex-end}
 .nav-link{text-decoration:none;color:var(--white);font-weight:500;font-size:.8rem;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}
 .nav-link:hover{color:var(--pink)}
-.nav-logo-center img{max-height:72px;width:auto;filter:drop-shadow(0 2px 12px rgba(230,57,136,.5))}
+.nav-logo-left{flex-shrink:0;margin-right:12px}.nav-logo-left img{max-height:56px;width:auto;filter:drop-shadow(0 2px 12px rgba(230,57,136,.5));border-radius:50%;border:2px solid rgba(230,57,136,.3);padding:2px}
 .cart-btn{position:relative;background:var(--fuchsia);border:none;width:44px;height:44px;border-radius:50%;cursor:pointer;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(230,57,136,.4);transition:all .3s;flex-shrink:0}
 .cart-btn:hover{transform:scale(1.08)}
 .cart-badge{position:absolute;top:-4px;right:-4px;background:var(--pink-light);color:var(--black);font-size:.65rem;font-weight:700;min-width:18px;height:18px;border-radius:9px;display:flex;align-items:center;justify-content:center;padding:0 4px;border:2px solid var(--black)}
 .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;color:#fff}
-@media(max-width:768px){.nav-links-left,.nav-links-right{display:none}.nav-links-left.mobile-open,.nav-links-right.mobile-open{display:flex;flex-direction:column;position:absolute;top:90px;left:0;right:0;background:var(--black-soft);padding:16px;box-shadow:var(--shadow-lg);z-index:95;border-bottom:2px solid var(--fuchsia)}.mobile-menu-btn{display:block}.nav-logo-center img{max-height:56px}}
+@media(max-width:768px){.nav-links-left,.nav-links-right{display:none}.nav-links-left.mobile-open,.nav-links-right.mobile-open{display:flex;flex-direction:column;position:absolute;top:90px;left:0;right:0;background:var(--black-soft);padding:16px;box-shadow:var(--shadow-lg);z-index:95;border-bottom:2px solid var(--fuchsia)}.mobile-menu-btn{display:block}.nav-logo-left img{max-height:48px}}
 
 /* HERO */
 .hero{background:var(--black);padding:60px 20px 80px;text-align:center;position:relative;overflow:hidden}
@@ -274,8 +274,8 @@ h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif}
 
 <!-- NAVIGATION -->
 <nav class="nav"><div class="nav-inner">
+<div class="nav-logo-left"><img src="https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/b4185e596_Screenshot2026-07-16at32658PM.png" alt="Kandy K Shop"></div>
 <div class="nav-links-left" id="navLeft"><a class="nav-link" href="#shop">Shop</a><a class="nav-link" href="#bundle">Bundles</a><a class="nav-link" href="#owner">About</a></div>
-<div class="nav-logo-center"><img src="https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/b4185e596_Screenshot2026-07-16at32658PM.png" alt="Kandy K Shop"></div>
 <div class="nav-links-right" id="navRight"><a class="nav-link" href="#carousel">Moments</a><a class="nav-link" href="#reviews">Reviews</a><a class="nav-link" href="#raffle">Raffle</a>
 <button class="cart-btn" onclick="openCart()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg><span class="cart-badge" id="cartBadge" style="display:none">0</span></button></div>
 <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
@@ -326,8 +326,8 @@ h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif}
 <p>She's in her 30s, she's inspiring, and she's been building this brand for over five years. From catering events to late-night cravings, every bag is packed with real love and real flavor. Sweet, spicy, tangy, and always made fresh. <span class="highlight">That's not just a hustle — that's a legacy being built one sweet drop at a time.</span></p>
 <p>She sources from Mexico. She caters with experience. She sells with heart. And honestly? She's just getting started.</p>
 <div class="personal-note">
-<p>"Her chamoy kandy is literally what I use for my rim paste at every single bartending gig. Hands down, one of the best kandies I've had in a really long time. She puts so much work and dedication into every batch — you can taste the difference. This whole website is my gift to her, because she deserves to be celebrated as the smart, creative entrepreneur she is."</p>
-<span class="signed">— Victoria, your sister-in-law 💕</span>
+<p>"Her chamoy kandy is literally what MariBar Bartending uses for rim paste at every single gig. Hands down, one of the best kandies we've ever had. She puts so much work and dedication into every batch — you can taste the difference. This whole website is a gift to her, because she deserves to be celebrated as the smart, creative entrepreneur she is."</p>
+<span class="signed">— MariBar Bartending 💕</span>
 </div>
 </div></div>
 </section>
@@ -401,7 +401,8 @@ h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif}
 <h2 class="bday-title-k">Happy Birthday<span>Karissa! 🎉</span></h2>
 <p class="bday-sub-k">The heart, the hustle, the one who made chamoy iconic.</p>
 <p class="bday-message-k"><strong>Karissa G.</strong> — this one's for you. You didn't just start a kandy business, you started a whole vibe. Kandy K Shop is proof that when you pour real love into something, people taste the difference. Every bag, every box, every chamoy-dripped creation — that's your fingerprints all over it.<br><br>You come from LA. You source from Mexico. You cater with experience and you sell with heart. That's not just a hustle, that's a legacy being built one sweet drop at a time. You're 30 now, and honestly? This is just the beginning.<br><br>From the bottom: you are loved, you are seen, and Kandy K Shop is going to be HUGE. Happy birthday, mija. 💛🍬</p>
-<p class="bday-sig-k">— Your sister-in-law built you a whole website for your birthday. That's love AND a flex. Happy 30th, Karissa! 🎂✨</p>
+<p class="bday-sig-k">— MariBar Bartending built you a whole website for your birthday. That's love AND a flex. Happy 30th, Karissa! 🎂✨</p>
+<p class="bday-sig-k" style="margin-top:14px;color:#FF8FAB;font-size:.82rem">Your family loves you, Karissa. We wish you nothing but the best — more flavors, more success, more moments that make you proud. 🫶</p>
 <div class="bday-extra-k">
 <p>You're a creative force. A smart woman. An entrepreneur who turns chamoy into art. Five years in and just getting started.</p>
 <p>Here's to more flavors, more late nights, more sold-out batches, and more people tasting your kandy and saying "damn, this is different."</p>
@@ -409,11 +410,14 @@ h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif}
 </div>
 <div class="bday-video-k" id="bdayVideoK">
 <div class="bday-play-badge-k">🎂 Birthday Moments</div>
-<div class="bday-dots-k" id="bdayDotsK"><span class="on"></span><span></span><span></span></div>
+<div class="bday-dots-k" id="bdayDotsK"><span class="on"></span><span></span><span></span><span></span><span></span><span></span></div>
 <div class="bday-slides-k" id="bdaySlidesK">
 <div class="bday-slide-k active"><img src="https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/e50190ab7_IMG_3062.jpg" alt="Happy 30th Birthday Karissa" loading="lazy"></div>
 <div class="bday-slide-k"><img src="https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/ff595ad4d_IMG_3064.jpg" alt="Karissa and friends" loading="lazy"></div>
 <div class="bday-slide-k"><img src="https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/dcec5ad7d_IMG_3063.jpg" alt="Karissa and family" loading="lazy"></div>
+<div class="bday-slide-k"><img src="https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/d4a31258a_IMG_1288.jpg" alt="Throwback with fam" loading="lazy"><div style="position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#fff;font-size:.76rem;font-weight:600;z-index:4;text-shadow:0 2px 8px rgba(0,0,0,.7);padding:0 12px">a lil throwback with your fam 🥹</div></div>
+<div class="bday-slide-k"><img src="https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/5430c239c_IMG_1287.jpg" alt="Throwback with fam" loading="lazy"><div style="position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#fff;font-size:.76rem;font-weight:600;z-index:4;text-shadow:0 2px 8px rgba(0,0,0,.7);padding:0 12px">a lil throwback with your fam 🥹</div></div>
+<div class="bday-slide-k"><img src="https://media.base44.com/images/public/6a4e9d6e7eff63beda95751e/4172b599c_IMG_1289.jpg" alt="Throwback with fam" loading="lazy"><div style="position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#fff;font-size:.76rem;font-weight:600;z-index:4;text-shadow:0 2px 8px rgba(0,0,0,.7);padding:0 12px">a lil throwback with your fam 🥹</div></div>
 </div>
 </div>
 </div>
